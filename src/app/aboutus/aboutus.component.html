@@ -1,0 +1,88 @@
+<div style="background-color: rgb(244,247,249);">
+  <div class="container d-flex justify-content-center align-items-center con" style="height: 90vh; padding-left: 15%; padding-right: 15%;">
+    <div class="row my-">
+        <div class="d-flex  align-items-center" >
+            <h1 style="font-weight: bold;">About Us</h1>
+            <div class="mt-2 ml-3" style="background: #08a056; width: 10px; height: 10px; border-radius: 50%;"></div>
+        </div>
+
+        <div>
+            <p>
+              We are delighted to present our innovative Prescription Detection System App,
+               developed as our graduation project at the esteemed Faculty of Computer Science in Kafr El Sheikh, Egypt.
+               Our team of dedicated students aimed to tackle the challenges in prescription management by leveraging advanced technology.
+               This article provides an overview of our project, highlighting its inception, development timeline, and the expertise of our team members.
+            </p>
+        </div>
+
+        <!-- <h2 class="my-5">Med Match</h2> -->
+        <!-- <div class="d-flex justify-content-between align-items-center " >
+            <div class="me-2"><h1>1k+</h1> <span style="color: blue;">Active Users</span></div>
+            <div class="mx-3"><h1>1B</h1> <span style="color: blue;">App installs</span></div>
+            <div class="ms-3"><h1>10B</h1> <span style="color: blue;">Spam calls identified and blocked</span></div>
+        </div> -->
+    </div>
+  </div>
+
+
+
+  <div >
+    <img class=" w-100"  [src]="img" alt="">
+  </div>
+
+  <div class="container d-flex justify-content-center align-items-center con" style="height: 70vh; padding-left: 15%; padding-right: 15%;">
+    <div class="row my-5">
+        <div class="d-flex  align-items-center">
+            <h1 style="font-weight: bold;">Why we exist</h1>
+            <div class="mt-2 ml-3" style="background: #08a056; width: 10px; height: 10px; border-radius: 50%;"></div>
+        </div>
+
+        <div class="my-5">
+            <p>Our existence is driven by a clear purpose: to revolutionize prescription management in healthcare. Through our Prescription Detection System App,
+               we aim to improve patient safety, enhance efficiency, empower patients, bridge the gap in technology, and drive innovation in the healthcare industry.
+               Our mission is to make a meaningful impact by leveraging advanced technology to address the challenges and inefficiencies in prescription handling.</p>
+        </div>
+        <!-- <div class="d-flex justify-content-between  ">
+            <div class="me-2 h-100 card"><img class="w-100 h-100" src="gemy.jpg" alt=""></div>
+            <div class="me-2 h-100 card"><img class="w-100 h-100" src="gemy.jpg" alt=""></div>
+            <div class="me-2 h-100 card"><img class="w-100 h-100" src="gemy.jpg" alt=""></div>
+        </div> -->
+    </div>
+
+
+  </div>
+
+
+
+
+
+  <div class="our-title">
+    <div class=" pb-5">
+    <h1 >Our Team</h1>
+    </div>
+  </div>
+<div class="container containerss py-5">
+  <div *ngFor="let member of team">
+    <div class="icon-image">
+      <div class="icon">
+        <img [src]="member.image" alt="" />
+      </div>
+      <div class="hover-image one">
+        <div class="img">
+          <img [src]="member.image" alt="" />
+        </div>
+        <div class="content">
+          <div class="details">
+            <div class="name">{{ member.name }}</div>
+            <div class="job">{{ member.position }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+<app-footer></app-footer>

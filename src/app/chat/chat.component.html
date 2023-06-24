@@ -1,0 +1,29 @@
+<div class="test" style="margin: auto; padding-top: 5%; width: 70%;"> 
+    <div class="chatbot bg-light position-fixed shadow-lg bg-body-tertiary rounded " >
+
+      <div class="header  p-2 text-center">
+        <h2 class="m-auto">Chatbot</h2>
+        <span class="material-symbols-rounded">close</span>
+      </div>
+      <ul class="chatbox p-4 pb-5 overflow-y-auto" style="height: 70vh;">
+        <div *ngIf="showChatbot" class="chatbot-container">
+          <div class="card p-1">
+            <h3>This is a Med Match Chat Bot that you can ask about whatever you want</h3>
+          </div>
+        </div>
+        <li *ngFor="let message of chatMessages" [ngClass]="message.role === 'incoming' ? 'incoming' : 'outgoing'">
+        <div *ngIf="message.role === 'incoming'" class="d-flex justify-content-start">
+          <span class="material-symbols-rounded bg-info text-center rounded mx-1" style="height: 32px; width: 32px;">smart_toy</span>
+          <p class="p-2 rounded bg-secondary">{{ message.content }}</p>
+        </div>
+        <div *ngIf="message.role === 'outgoing'" class="d-flex justify-content-end">
+          <p class="p-2 rounded bg-info">{{ message.content }}</p>
+        </div>
+      </li>
+      </ul>
+      <div class="chat-input bottom-0 w-100 d-flex p-2 ">
+        <textarea class="w-100 p-3" placeholder="Enter a Message...." [(ngModel)]="userMessage" required></textarea>
+        <span id="send-btn" class="material-symbols-rounded send" (click)="sendMessage()">send</span>
+      </div>
+    </div>
+   </div>

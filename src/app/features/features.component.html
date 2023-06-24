@@ -1,0 +1,71 @@
+<div class="all">
+
+    <div class="main">
+        <header class="">
+        <div class="mycontainer d-flex align-items-center" >
+            <div class="row mt-5">
+                <div class="header-content col-xl-6">
+                    <h6 class="text-capitalize">features</h6>
+                    <h2 class="text-capitalize">all features you need </h2>
+                    <h2 class="text-capitalize">in med match</h2>
+                    <button type="button" class="btn btn-success text-capitalize">get med match app</button>
+                </div>
+
+                <div class="header-img col-xl-6 d-flex justify-content-center align-items-center">
+                        <img src="../../assets/Capture.PNG" class="w-100 h-75" alt="">
+                </div>
+        </div>
+        </div>
+        </header>
+
+    </div>
+
+
+    <div class="features pt-5 mt-5">
+        <div class="mycontainer2">
+            <h1 class="text-capitalize">features</h1>
+        
+            
+               <!-- <div class="button-group " >
+                    <button class="btn btn-success" routerLink="mobilefeatures" >mobile</button>
+                
+                    <button class="btn btn-success" routerLink="desktopfeatures">desktop</button>
+               </div> -->
+            
+               
+                    <div class="button-boxx d-flex">
+                        <div id="btnn" #btnRef></div>
+                        <button type="button" #mobileRef class="toggle-btnn text-capitalize text-center left" (click)="leftClick()" routerLink="mobilefeatures">mobile</button>
+                        <button type="button" #desktopRef class="toggle-btnn text-capitalize text-center right" (click)="rightClick()" routerLink="desktopfeatures">desktop</button>
+                    </div>
+                
+              
+            
+        
+
+            
+
+
+
+
+        
+
+        </div>
+            <router-outlet></router-outlet>
+     </div>
+
+
+     <!-- <div class="container">
+        <div class="rounded-div">
+          <button #button1 class="rounded-button" (click)="toggleButtons(button1, button2)">Button 1</button>
+          <button #button2 class="rounded-button" (click)="toggleButtons(button2, button1)">Button 2</button>
+        </div>
+      </div> -->
+      
+   
+
+        
+</div>
+
+
+<app-footer></app-footer>

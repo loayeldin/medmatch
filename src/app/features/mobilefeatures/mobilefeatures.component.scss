@@ -1,0 +1,273 @@
+
+.features
+{
+    background-color: rgb(244,247,249);
+}
+.first-card
+{
+    background-color: white;
+    height: 450px;
+    border-radius: 20px;
+    // overflow: hidden;
+}
+.first-card-content h3 
+{
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+
+}
+.first-card-content p 
+{
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.first-card-content button 
+{
+    margin-top: 30px;
+    padding: 1rem;
+    text-align: center;
+    line-height: 1;
+    border-radius: 9999px;
+    margin-left: 10px;
+    border-width: 2px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    background-color: var(--primarygreen-color);
+    border-color: var(--secondrygreen-color);
+    color: white;
+    letter-spacing: 1px;
+}
+.first-card-img img 
+{
+    height: 380px;
+    width: 80%;
+    // transform: scale(.9);
+}
+.mycontainer3
+{
+    width: 80% !important;
+    padding: 10px 50px;
+ 
+    margin: auto;
+}
+
+
+
+
+// @media (max-width: 767px)
+// {
+   
+// }
+
+// @media (min-width: 768px) and (max-width: 991px)
+// {
+//     .first-card
+//     {
+//         background-color: blue;
+//         height: auto;
+    
+//         // overflow: hidden;
+//     }
+
+//     .mycontainer3
+//     {
+//         width: 100% !important;
+//         padding: 10px 10px;
+//         height: auto !important;
+//         margin: auto;
+//         background-color: yellow;
+//     }
+
+//     .first-card-img img 
+//     {
+//         height: auto;
+//         width: 80%;
+//         // transform: scale(.9);
+//     }
+// }
+
+
+@media (max-width: 1199px) {
+    .first-card {
+        height: auto;
+    }
+
+    .first-card-content {
+        text-align: left;
+    }
+
+    .first-card-img {
+        justify-content: start;
+        margin-top: 20px;
+        height: 50%;
+        width: 70%;
+    
+    }
+
+    .first-card-img img {
+        height: auto;
+        width: 100%;
+        transform: scale(.8);
+    }
+        .first-card-content h3 
+    {
+        font-size: 28px;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+        text-transform: capitalize;
+        font-weight: bold;
+    }
+    .first-card-content p 
+    {
+        font-size: 15px;
+        letter-spacing: .5px;
+    }
+    .first-card-content button 
+    {
+        margin-top: 30px;
+        padding: .9rem;
+        text-align: center;
+        line-height: 1;
+        border-radius: 9999px;
+        margin-left: 10px;
+        border-width: 2px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        background-color: var(--primarygreen-color);
+        border-color: var(--secondrygreen-color);
+        color: white;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mycontainer3 {
+        width: 90% !important;
+        padding: 20px 20px;
+    }
+
+    .first-card-img {
+        justify-content: center;
+    }
+}
+
+
+
+
+
+
+
+.second-card
+{
+    background-color: white;
+    padding: 50px;
+    height: 700px;
+}
+.second-card h3 
+{
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.second-card p 
+{
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.second-card-img {
+     text-align: center;
+    }
+.second-card-img img 
+{
+    height: 500px;
+    width: 55%;
+    // transform: scale(.9);
+}
+.mycontainer4
+{
+    width: 83% !important;
+    padding: 10px 50px;
+ 
+    margin: auto;
+}
+
+@media (max-width: 991px) {
+    .mycontainer4 {
+              
+        width: 90% !important;
+        padding: 10px;
+        
+    }
+    .lol
+        {
+           
+            justify-content: flex-start;
+            flex-wrap: wrap;
+          
+         }
+    .second-card {
+        height: auto;
+        margin-top: 30px;
+    }
+
+    .second-card-img img {
+        height: auto;
+        width: 100%;
+        transform: scale(.8);
+    }
+    .reverse
+         {
+           
+            display: flex;
+            flex-direction: column-reverse;
+        
+         }
+}
+
+
+
+@media (max-width: 768px) {
+    .mycontainer4 {
+              
+                width: 90% !important;
+                padding: 10px;
+            }
+    .second-card {
+      padding: 30px;
+      height: auto;
+    }
+    .lol
+        {
+           
+            justify-content: flex-start;
+            flex-wrap: wrap;
+          
+         }
+         .reverse
+         {
+           
+            display: flex;
+            flex-direction: column-reverse;
+        
+         }
+    .second-card h3 {
+      font-size: 24px;
+    }
+  
+    .second-card p {
+      font-size: 13px;
+    }
+  
+    .second-card-img img {
+      height: auto;
+      width: 80%;
+      transform: scale(.8);
+    }
+  }
+
+ 

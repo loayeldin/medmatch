@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  @import 'material-symbols';
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Geologica&family=Roboto+Mono:wght@400;500&display=swap');
+   
+
+
+  
+ 
+   
+
+    --secondrygreen-color:#08a056;
+    --primarygreen-color: #08a056;
+    --secondrybg-color:rgb(244,247,249)
+
+
+  
+
+   /* Example font import */
+
+/* Apply font to all elements */
+* {
+    font-family: 'Geologica', sans-serif;
+    // font-family: 'Roboto Mono', monospace;
+
+    .form-control:focus {
+      border-color: var(--primarygreen-color) !important; /* Change the border color when focused */
+      box-shadow: 0 0 0 0.01rem var(--primarygreen-color); /* Optional: Add a box shadow when focused */
+    }
+} 
+  }
+

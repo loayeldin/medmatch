@@ -1,0 +1,151 @@
+<!-- <div class="all">
+    <div class="container " >
+        <div *ngIf="errorSearch" class="alert alert-danger">
+            <p>{{errorSearch}}</p>
+        </div>
+        <div *ngFor="let drug of searchResult.drugs" class="border searchresult">
+            <h6>{{drug.name}}</h6>
+            <h6>{{drug.activeIngredient}}</h6>
+            <h6>{{drug.price}}</h6>
+        </div>
+    
+    </div>
+</div> -->
+
+
+
+
+
+<div class="all">
+    <div class="container">
+
+        <div class="table-header d-flex justify-content-between align-items-center">
+            <h2>drugname</h2>
+
+          
+            <div class="input-field">
+                <input type="text" placeholder="Search Drug" class="form-control"  (keyup)="searchh($event.target)"> 
+                <fa-icon [icon]="faMagnifyingGlass" class="icon" ></fa-icon>
+            </div>
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Drug Name</th>
+                    <th>activeIngredient</th>
+                    <th>price</th>
+                    <th>alternative</th>
+                </tr>
+            </thead>
+
+           <!--loading search result data--> 
+                <tbody *ngIf="!searchResultReady">
+                        <tr>
+                            <td colspan="5" class="full-width-td text-center"><app-loading-spinner></app-loading-spinner></td>
+                        </tr>
+                    </tbody>
+             <!--lloading search result data--> 
+
+
+            <tbody *ngIf="searchResultReady">
+                    <!--error -->
+                        <tr  *ngIf="errorSearch">
+                                <td colspan="5" class="full-width-td alert alert-danger">
+                                    <p>{{errorSearch}}</p>
+                                </td>
+                        </tr>
+                    <!--error -->
+                <tr *ngFor="let drug of searchResult.drugs ; let i = index">   
+                    
+                    <td>{{i+1}}</td>
+                    <td>{{drug.name}}</td>
+                    <td>{{drug.activeIngredient}}</td>
+                    <td>{{drug.price}} L.E</td>
+                    <td><button class="btn btn-success text-capitalize" (click)="getAlternatives(i)" data-toggle="modal" data-target="#staticBackdrop">alternatives</button></td>
+                </tr>
+
+              
+                               
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!-- Scrollable modal -->
+
+
+  
+  <!-- Modal -->
+  <div  class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-capitalize" id="staticBackdropLabel">similar drugs</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+
+
+
+
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Drug Name</th>
+                        <th>activeIngredient</th>
+                        <th>price</th>
+                      
+                    </tr>
+                </thead>
+
+            
+                <!-- loading alterdata-->
+                    <tbody *ngIf="!alterready">
+                        <tr>
+                            <td colspan="5" class="full-width-td text-center"><app-loading-spinner></app-loading-spinner></td>
+                        </tr>
+                    </tbody>
+                <!-- loading alterdata-->
+                <tbody *ngIf="alterready">
+                 
+                    <tr  *ngFor="let drug of alterDrugsData; let i = index" >   
+                        
+                        <td>{{i+1}}</td>
+                        <td>{{drug.name}}</td>
+                        <td>{{drug.activeIngredient}}</td>
+                        <td>{{drug.price}} L.E</td>
+                        
+                    </tr>
+    
+                  
+                                   
+                </tbody>
+            </table>
+         
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal" >Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>

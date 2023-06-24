@@ -1,0 +1,192 @@
+
+<!-- <div class="register d-flex justify-content-center align-items-center">
+    <div class="register-box">
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngIf="isLoading" style="text-align: center;">
+                    <app-loading-spinner></app-loading-spinner>
+                </div>
+        
+                <div *ngIf="errorMessage" class="alert alert-danger">
+                    <p>{{errorMessage}}</p>
+                </div>
+                <form #login="ngForm" (ngSubmit)="onSubmit(login)" class="mt-3">
+        
+                    <div class="row d-flex justify-content-start align-items-center">
+                        <div class="col-md-8 form-group "  >
+                            <label for="">email</label>
+                            <input 
+                            type="email"
+                            name="email"
+                            id="email" 
+                            class="form-control"
+                            ngModel
+                            required>
+                        </div>
+                    </div>
+
+                   
+        
+        
+                    <div class="row d-flex justify-content-start align-items-center">
+                        <div class="col-md-8 form-group">
+                            <label for="">password</label>
+                            <input 
+                            type="password"
+                            name="password"
+                            id="password" 
+                            class="form-control"
+                            ngModel
+                            required
+                            maxlength="15">
+                        </div>
+                    </div>
+
+                   
+        
+                    <div class="row">
+                      <div class="col-md-8 text-left">
+                        <button class="btn btn-primary text-capitalize" type="submit" [disabled]="!login.valid"> log in</button>
+                      </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+<!-- <div class="register d-flex justify-content-center align-items-center">
+
+    <div *ngIf="isLoading" style="text-align: center;">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+
+   
+
+    <section  *ngIf="!isLoading" class="wrapper active">
+
+ 
+     <div class="form signup">
+          <header >Login</header>
+          <form >
+
+            <input type="text" placeholder="Full name" required />
+
+            
+            <input type="text" placeholder="Email address" required />
+            <input type="password" placeholder="Password" required />
+            <div class="checkbox">
+              <input type="checkbox" id="signupCheck" />
+              <label for="signupCheck">I accept all terms & conditions</label>
+            </div>
+            <input type="submit" value="Signup" />
+          </form>
+        </div>
+  
+        <div class="form login mt-5 ">
+         
+          <form #login="ngForm" (ngSubmit)="onSubmit(login)" class=""> 
+
+            <input 
+            type="email"
+            name="email"
+            id="email" 
+            class="form-control"
+            ngModel
+            required
+             placeholder="Email address"
+               
+              />
+            
+              <div *ngIf="emailError" class="alert alert-danger p-2">
+                <p>{{emailError}}</p>
+            </div>
+
+            <input 
+                type="password"
+                name="password"
+                id="password" 
+                class="form-control"
+                ngModel
+                required
+                maxlength="15"
+                placeholder="Password"
+             />
+             <div *ngIf="passError" class="alert alert-danger  p-3">
+                <p>{{passError}}</p>
+            </div>
+            <a href="#">Forgot password?</a>
+            <input type="submit" value="Login"  class="mt-2" [disabled]="!login.valid"/>
+          </form>
+        </div> 
+  
+      </section>
+
+
+
+</div> -->
+
+
+
+
+
+
+
+
+ <div class="register d-flex justify-content-center align-items-center">
+
+    
+
+    <div class="wrapper" >
+        
+    <header><h2>login</h2></header>
+    <form #login="ngForm" (ngSubmit)="onSubmit(login)" class=" formm"> 
+        <div *ngIf="isLoading" style="text-align: center;">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+
+        <input 
+        type="email"
+        name="email"
+        id="email" 
+        class="form-control mb-2"
+        ngModel
+        required
+        placeholder="Email address"
+       
+           
+          />
+        
+          <div *ngIf="emailError" class="alert alert-danger p-3 mb-2">
+            <p>{{emailError}}</p>
+        </div>
+
+       
+
+
+        <div class="testtt">
+            <input 
+            [type]="showPassword ? 'text' : 'password'"
+            name="password"
+            id="password" 
+            class="form-control mb-2"
+            ngModel
+            required
+            maxlength="15"
+            placeholder="Password"
+            />
+            <fa-icon [icon]="faEye" class="mr-2 showPass" (click)="togglePasswordVisibility()" ></fa-icon>
+        </div>
+
+         <div *ngIf="passError" class="alert alert-danger  p-3 mb-2">
+            <p>{{passError}}</p>
+        </div>
+        <a href="#">Forgot password?</a>
+        <input type="submit" value="Submit"  class="mt-2" [disabled]="!login.valid"/>
+      </form>
+    </div>
+</div>
