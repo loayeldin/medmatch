@@ -82,7 +82,7 @@ export class NavbarComponent {
       } else {
         // `user` variable does not contain values
         // Perform your logic here
-        console.log('a7aaa')
+       
          this.loggedIn=false
       }
      })
