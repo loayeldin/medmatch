@@ -220,3 +220,34 @@
   
     }
   }
+
+
+  @media (max-width: 600px) 
+  {
+      .mycontainer3
+  {
+      width: 100% !important;
+      padding: 10px 50px;
+  
+      margin: auto;
+  }
+
+  .mycontainer4
+  {
+      width: 100% !important;
+      padding:0;
+  
+      margin: auto;
+  }
+
+    .second-card
+  {
+      // background-color: white;
+      // padding: 30px;
+      // height: 600px;
+      // border-radius: 10px;
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px 50px;
+  }
+  }

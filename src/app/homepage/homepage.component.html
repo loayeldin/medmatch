@@ -1,235 +1,237 @@
 
-
+<div class="all">
+    
 
 <div class="header">
-   <div class="overlay d-flex justify-content-center align-items-center">
-    <div class="container d-flex justify-content-center align-items-center" >
-        <div class="content ">
-            <h1>Enhancing Healthcare  Prescription Detection System for Improved Patient Care<span class="dot">.</span></h1>
-
-          
-            <div class="search d-flex justify-content-between align-items-center">
-                <span class="ml-3 search-input-container" >
-                    <input type="text" class="form-control search-input" placeholder="Search Drug ...." [(ngModel)]="searchValue">
-                </span>
-                <button [class.notactive]="!loggedIn" class="btn mr-4" [disabled]="!loggedIn" (click)="search()">    <!--edit in disabled (!loggedIn)-->            
-                     <span class="circle d-flex justify-content-center align-items-center">
-                        <fa-icon [icon]="faMagnifyingGlass" class="icon" ></fa-icon>
-                     </span>
-                </button>
-            </div>
+    <div class="overlay d-flex justify-content-center align-items-center">
+     <div class="container d-flex justify-content-center align-items-center" >
+         <div class="content ">
+             <h1>Enhancing Healthcare  Prescription Detection System for Improved Patient Care<span class="dot">.</span></h1>
+ 
            
-
-            <!-- <div class="search">
-                <div class="row">
-                    <span class="ml-3 col-md-9">
-                        <input type="text" class="form-control search-input">
-                    </span>
-                    <span class="mr-4 col-md-2" >               
-                         <span class="circle d-flex justify-content-center align-items-center">
-                            <fa-icon [icon]="faMagnifyingGlass" class="icon"></fa-icon>
-                         </span>
-                    </span>
-                </div>
-            </div> -->
-
-           <div class="">
-            <button class="btn btn-light button-app-style">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="mr-2"> <fa-icon [icon]="faAppleAlt" class="icon greencolor " ></fa-icon></div>
-
-                <div> Download App</div>
-              </div>
+             <div class="search d-flex justify-content-between align-items-center">
+                 <span class="ml-3 search-input-container" >
+                     <input type="text" class="form-control search-input" placeholder="Search Drug ...." [(ngModel)]="searchValue">
+                 </span>
+                 <button [class.notactive]="!loggedIn" class="btn mr-4" [disabled]="!loggedIn" (click)="search()">    <!--edit in disabled (!loggedIn)-->            
+                      <span class="circle d-flex justify-content-center align-items-center">
+                         <fa-icon [icon]="faMagnifyingGlass" class="icon" ></fa-icon>
+                      </span>
+                 </button>
+             </div>
             
-            </button>
-            <button class="btn btn-light button-app-style">
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="mr-2">    <fa-icon [icon]="faDownload" class="icon greencolor" ></fa-icon></div>
-                <div>   Downlaod Apk</div>
-              </div>
-            </button>
-           </div>
-        </div>
+ 
+             <!-- <div class="search">
+                 <div class="row">
+                     <span class="ml-3 col-md-9">
+                         <input type="text" class="form-control search-input">
+                     </span>
+                     <span class="mr-4 col-md-2" >               
+                          <span class="circle d-flex justify-content-center align-items-center">
+                             <fa-icon [icon]="faMagnifyingGlass" class="icon"></fa-icon>
+                          </span>
+                     </span>
+                 </div>
+             </div> -->
+ 
+            <div class="button-group">
+             <button class="btn btn-light button-app-style">
+               <div class="d-flex justify-content-between align-items-center">
+                 <div class="mr-2"> <fa-icon [icon]="faAppleAlt" class="icon greencolor " ></fa-icon></div>
+ 
+                 <div> Download App</div>
+               </div>
+             
+             </button>
+             <button class="btn btn-light button-app-style">
+               <div class="d-flex justify-content-between align-items-center">
+                 <div class="mr-2">    <fa-icon [icon]="faDownload" class="icon greencolor" ></fa-icon></div>
+                 <div>   Downlaod Apk</div>
+               </div>
+             </button>
+            </div>
+         </div>
+     </div>
     </div>
-   </div>
-</div>
-
-
-<!-- end first section-->
-
-<div class="we pt-5 pb-5">
-    <div class="container">
-
-       <header class="text-center mt-3 ">
-        <h2 class="text-capitalize">what we do</h2>
-       </header>
-
-        <div class="row mt-5 mb-5">
-
-            <div class="col-lg-3 col-md-6 d-flex justify-content-center align-items-center" >
-                <div>
-                    <div class="text-center">
-                        <!-- <img src="../../assets/1_trusted_caller_id_app.svg" class="w-75 h-75" alt=""> -->
-                        <fa-icon [icon]="faMobile" class="icon  faPeopleGroup" ></fa-icon>
-                        
-                    </div>
-                    <div class="text-center">
-                        <p>introducing a first kind application in prescription detection.</p>
-                    </div>
-                </div>
-            </div>
-
-            
-
-            <div class="col-lg-3 col-md-6">
-                <div class="text-center">
-                    <!-- <img src="../../assets/community_based_spam_reporting.svg" class="w-75 h-75" alt=""> -->
-                    <fa-icon [icon]="faPeopleGroup" class="icon faPeopleGroup" ></fa-icon>
-                </div>
-                <div class="text-center">
-                    <p>helping both patients and pharmacists.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="text-center">
-                    <!-- <img src="../../assets/auto_block_spam_calls_and_sms.svg" class="w-75 h-75" alt=""> -->
-                    <fa-icon [icon]="faShieldHalved" class="icon  faPeopleGroup" ></fa-icon>
-
-                   
-                </div>
-                <div class="text-center">
-                    <p>patient's well being is our absolute number one priority.</p>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <div class="text-center">
-                    <!-- <img src="../../assets/safe_and_efficient_communication.svg" class="w-75 h-75" alt=""> -->
-                    <fa-icon [icon]="faKey" class="icon  faPeopleGroup" ></fa-icon>
-                </div>
-                <div class="text-center">
-                    <p>choose a reliable better way to order your drugs online.</p>
-                </div>
-            </div>
-            
-        </div>
-
-
-        <div class="features mt-5 pt-5">
-            <div class="row mt-5">
-
-                <div class="col-lg-7" >
-                    <h5 class="text-capitalize">features</h5>
-                    <h2 class="text-capitalize">all features you need in med match<span class="dot ml-3">.</span></h2>
-                    <p>automating your daily prescription identifying and delivering drugs to your doorstep has never been easier.</p>
-
-                    <div class="features-card d-flex justify-content-between align-items-center one" (mouseenter)="onHoverIn1()" (mouseleave)="onHoverOut1()">
-                        <div >
-                            <fa-icon [icon]="faSearch" class="icon feature-icon  faPeopleGroup" ></fa-icon>
-
-                        </div>
-
-                        <div class="">
-                            <h6 class="mt-2 text-capitalize greencolor">prescreption scan</h6>
-                            <p>easily scan and prescription.</p>
-                        </div>
-
-                        <div class="ml-3">
-                            <fa-icon [icon]="faArrowRight " class="icon  greencolor"></fa-icon>
-                        </div>
-                    </div>
-
-                    <div class="features-card d-flex justify-content-between align-items-center two" (mouseenter)="onHoverIn2()" (mouseleave)="onHoverOut1()">
-                        <div >
-                          <fa-icon [icon]="faListCheck" class="icon feature-icon  faPeopleGroup" ></fa-icon>
-
-                        </div>
-
-                        <div class="ml-3">
-                            <h6 class="mt-2 text-capitalize greencolor">search history</h6>
-                            <p>seamless history tracking drugs.</p>
-                        </div>
-
-                        <div class="ml-3">
-                            <fa-icon [icon]="faArrowRight" class="icon  greencolor"></fa-icon>
-                        </div>
-                    </div>
-
-
-                    <div class="features-card d-flex justify-content-between align-items-center three" (mouseenter)="onHoverIn3()" (mouseleave)="onHoverOut1()">
-                        <div >
-                            <fa-icon [icon]="faPills" class="icon  feature-icon faPeopleGroup" ></fa-icon>
-                        </div>
-
-                        <div class="ml-3">
-                            <h6 class="mt-2 text-capitalize greencolor">similar drugs</h6>
-                            <p>find availabe alternatives drugs.</p>
-                        </div>
-
-                        <div class="ml-3">
-                            <fa-icon [icon]="faArrowRight" class="icon  greencolor"></fa-icon>
-                        </div>
-                    </div>
-
-
-                    <div class="features-card d-flex justify-content-between align-items-center four" (mouseenter)="onHoverIn4()" (mouseleave)="onHoverOut1()">
-                        <div >
-                            <fa-icon [icon]="faInfo" class="icon feature-icon faPeopleGroup" ></fa-icon>
-                        </div>
-
-                        <div class="ml-3">
-                            <h6 class="mt-2 text-capitalize greencolor">drug details</h6>
-                            <p>comprehensive drug database.</p>
-                        </div>
-
-                        <div class="ml-3">
-                            <fa-icon [icon]="faArrowRight" class="icon  greencolor"></fa-icon>
-                        </div>
-                    </div>
-
+ </div>
+ 
+ 
+ <!-- end first section-->
+ 
+ <div class="we pt-5 pb-5">
+     <div class="container">
+ 
+        <header class="text-center mt-3 ">
+         <h2 class="text-capitalize">what we do</h2>
+        </header>
+ 
+         <div class="row mt-5 mb-5">
+ 
+             <div class="col-lg-3 col-md-6 d-flex justify-content-center align-items-center" >
+                 <div>
+                     <div class="text-center">
+                         <!-- <img src="../../assets/1_trusted_caller_id_app.svg" class="w-75 h-75" alt=""> -->
+                         <fa-icon [icon]="faMobile" class="icon  faPeopleGroup" ></fa-icon>
+                         
+                     </div>
+                     <div class="text-center">
+                         <p>introducing a first kind application in prescription detection.</p>
+                     </div>
+                 </div>
+             </div>
+ 
+             
+ 
+             <div class="col-lg-3 col-md-6">
+                 <div class="text-center">
+                     <!-- <img src="../../assets/community_based_spam_reporting.svg" class="w-75 h-75" alt=""> -->
+                     <fa-icon [icon]="faPeopleGroup" class="icon faPeopleGroup" ></fa-icon>
+                 </div>
+                 <div class="text-center">
+                     <p>helping both patients and pharmacists.</p>
+                 </div>
+             </div>
+ 
+             <div class="col-lg-3 col-md-6">
+                 <div class="text-center">
+                     <!-- <img src="../../assets/auto_block_spam_calls_and_sms.svg" class="w-75 h-75" alt=""> -->
+                     <fa-icon [icon]="faShieldHalved" class="icon  faPeopleGroup" ></fa-icon>
+ 
                     
-
-                </div>
-
-                <div class="col-lg-5 feature-right mt-3" style="">
-                      
-                     <img [src]="imgPath" class="w-100 h-100" alt="">
+                 </div>
+                 <div class="text-center">
+                     <p>patient's well being is our absolute number one priority.</p>
+                 </div>
+             </div>
+ 
+             <div class="col-lg-3 col-md-6">
+                 <div class="text-center">
+                     <!-- <img src="../../assets/safe_and_efficient_communication.svg" class="w-75 h-75" alt=""> -->
+                     <fa-icon [icon]="faKey" class="icon  faPeopleGroup" ></fa-icon>
+                 </div>
+                 <div class="text-center">
+                     <p>choose a reliable better way to order your drugs online.</p>
+                 </div>
+             </div>
+             
+         </div>
+ 
+ 
+         <div class="features mt-5 pt-5">
+             <div class="row mt-5">
+ 
+                 <div class="col-lg-7" >
+                     <h5 class="text-capitalize">features</h5>
+                     <h2 class="text-capitalize">all features you need in med match<span class="dot ml-3">.</span></h2>
+                     <p>automating your daily prescription identifying and delivering drugs to your doorstep has never been easier.</p>
+ 
+                     <div class="features-card d-flex justify-content-between align-items-center one" (mouseenter)="onHoverIn1()" (mouseleave)="onHoverOut1()">
+                         <div >
+                             <fa-icon [icon]="faSearch" class="icon feature-icon  faPeopleGroup" ></fa-icon>
+ 
+                         </div>
+ 
+                         <div class="">
+                             <h6 class="mt-2 text-capitalize greencolor">prescreption scan</h6>
+                             <p>easily scan and prescription.</p>
+                         </div>
+ 
+                         <div class="ml-3">
+                             <fa-icon [icon]="faArrowRight " class="icon  greencolor"></fa-icon>
+                         </div>
+                     </div>
+ 
+                     <div class="features-card d-flex justify-content-between align-items-center two" (mouseenter)="onHoverIn2()" (mouseleave)="onHoverOut1()">
+                         <div >
+                           <fa-icon [icon]="faListCheck" class="icon feature-icon  faPeopleGroup" ></fa-icon>
+ 
+                         </div>
+ 
+                         <div class="ml-3">
+                             <h6 class="mt-2 text-capitalize greencolor">search history</h6>
+                             <p>seamless history tracking drugs.</p>
+                         </div>
+ 
+                         <div class="ml-3">
+                             <fa-icon [icon]="faArrowRight" class="icon  greencolor"></fa-icon>
+                         </div>
+                     </div>
+ 
+ 
+                     <div class="features-card d-flex justify-content-between align-items-center three" (mouseenter)="onHoverIn3()" (mouseleave)="onHoverOut1()">
+                         <div >
+                             <fa-icon [icon]="faPills" class="icon  feature-icon faPeopleGroup" ></fa-icon>
+                         </div>
+ 
+                         <div class="ml-3">
+                             <h6 class="mt-2 text-capitalize greencolor">similar drugs</h6>
+                             <p>find availabe alternatives drugs.</p>
+                         </div>
+ 
+                         <div class="ml-3">
+                             <fa-icon [icon]="faArrowRight" class="icon  greencolor"></fa-icon>
+                         </div>
+                     </div>
+ 
+ 
+                     <div class="features-card d-flex justify-content-between align-items-center four" (mouseenter)="onHoverIn4()" (mouseleave)="onHoverOut1()">
+                         <div >
+                             <fa-icon [icon]="faInfo" class="icon feature-icon faPeopleGroup" ></fa-icon>
+                         </div>
+ 
+                         <div class="ml-3">
+                             <h6 class="mt-2 text-capitalize greencolor">drug details</h6>
+                             <p>comprehensive drug database.</p>
+                         </div>
+ 
+                         <div class="ml-3">
+                             <fa-icon [icon]="faArrowRight" class="icon  greencolor"></fa-icon>
+                         </div>
+                     </div>
+ 
                      
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-    </div>
+ 
+                 </div>
+ 
+                 <div class="col-lg-5 feature-right mt-3" style="">
+                       
+                      <img [src]="imgPath" class="w-100 h-100" alt="">
+                      
+                 </div>
+             </div>
+         </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+     </div>
+ </div>
+ 
+ <!-- end second section-->
+ 
+ <div class="impact" >
+     <div class="row">
+         <div class="col-lg-6 h-75"  >
+             <img src="../../assets/impactttttttttttttttttttttt.jpg" class="w-100 h-75" alt="">
+         </div>
+             
+         <div class="col-lg-6 pt-5 h-75" >
+             <div class="impact-content w-75 ml-4 ">
+                 <h5 class="text-uppercase pt-5">impact</h5>
+                 <h2 class="text-capitalize">Making an Impact through med match <span class="dot">.</span></h2>
+                 <button class="btn text-capitalize">read more</button>
+             </div>
+         </div>
+     </div>
+ </div>
+ 
+ 
+ 
+ <app-footer></app-footer>
 </div>
-
-<!-- end second section-->
-
-<div class="impact" >
-    <div class="row">
-        <div class="col-lg-6 h-75"  >
-            <img src="../../assets/impactttttttttttttttttttttt.jpg" class="w-100 h-75" alt="">
-        </div>
-            
-        <div class="col-lg-6 pt-5 h-75" >
-            <div class="impact-content w-75 ml-4 ">
-                <h5 class="text-uppercase pt-5">impact</h5>
-                <h2 class="text-capitalize">Making an Impact through med match <span class="dot">.</span></h2>
-                <button class="btn text-capitalize">read more</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<app-footer></app-footer>

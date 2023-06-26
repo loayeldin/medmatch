@@ -23,6 +23,7 @@
 /* Apply font to all elements */
 * {
     font-family: 'Geologica', sans-serif;
+    
     // font-family: 'Roboto Mono', monospace;
 
     .form-control:focus {
@@ -30,5 +31,8 @@
       box-shadow: 0 0 0 0.01rem var(--primarygreen-color); /* Optional: Add a box shadow when focused */
     }
 } 
+
+
+
   }
 

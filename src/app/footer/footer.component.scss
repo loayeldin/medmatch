@@ -185,3 +185,22 @@ footer h6
   {
     color: var(--secondrygreen-color);
   }
+
+
+
+  @media (max-width: 600px) 
+  {
+    .download
+    {
+      padding: 10px;
+    }
+      .download .download-content h2
+  {
+      font-weight: bold;
+      font-size: 36px;
+  }
+    footer
+    {
+      padding-left: 20px !important;
+    }
+  }

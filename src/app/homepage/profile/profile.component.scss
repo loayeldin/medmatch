@@ -248,6 +248,7 @@
     width: 100% !important;
     height: 100% !important;
    
+   
   
 
 }
@@ -277,9 +278,24 @@
     #ddd;
     border-color: var(--primarygreen-color) !important;
 }
+.title
+{
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
 @media (max-width: 1199px) {
+    .personalInfo form{
+        padding-bottom: 20px;
+        // background-color: red;
+        width: 100% !important;
+        
+        // width: 50%;
+    }
     .first-card {
         height: auto;
+        margin-bottom: 20px;
     }
 
     .first-card-content {
@@ -328,6 +344,11 @@
         color: white;
         letter-spacing: 1px;
     }
+    .orderHistory
+    {
+        padding-bottom: 20px;
+    }
+       
 }
 
 @media (max-width: 767px) {
@@ -335,23 +356,61 @@
         width: 90% !important;
         padding: 20px 20px;
     }
+    .personalInfo form{
+        padding-bottom: 20px;
+        // background-color: red;
+        width: 100% !important;
+        
+        // width: 50%;
+    }
 
     .first-card-img {
         justify-content: center;
     }
-    .profile
-{
-    width: 98%;
-    height: auto;
-    padding: 10px;
-}
+        .profile
+    {
+        width: 98%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .personalInfo form{
+        padding-bottom: 20px;
+        // background-color: red;
+        width: 100% !important;
+        
+        // width: 50%;
+    }
+    .orderHistory
+    {
+        padding-bottom: 20px;
+    }
+        .first-card
+    {
+
+        margin-bottom: 20px;
+    
+    }
 }
 
 
-.title
+@media (max-width: 600px)
 {
-    font-weight: bold;
-    font-size: 17px;
-    margin-bottom: 5px;
-    margin-right: 5px;
+    .personalInfo form{
+        padding-bottom: 20px;
+        // background-color: red;
+        width: 100% !important;
+        
+        // width: 50%;
+    }
+    .orderHistory
+    {
+        padding-bottom: 20px;
+    }
+        .first-card
+    {
+    
+        margin-bottom: 20px;
+      
+    }
 }

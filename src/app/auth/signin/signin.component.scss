@@ -174,48 +174,15 @@ form
 
 
 
-// .wrapper {
-//     position: relative;
-//     max-width: 470px;
-//     width: 100%;
-//     border-radius: 12px;
-//     padding-left:0;
-//     padding-right: 0;
-//     padding-top: 100px;
-  
-//     background: #4070f4;
-//     box-shadow: 0
-//       5px
-//       10px
-//       rgba(
-//         0,
-//         0,
-//         0,
-//         0.1
-//       );
-//     overflow: hidden;
-//   }
-
-// .loginForm
-// {
-//     background-color: red;
-//     width: 100%;
-//     height: ;
-//     border-radius: 35%;
-// }
 
 
 .wrapper {
-  //   position: relative;
+ 
     max-width: 470px;
     width: 100%;
-  //  max-height: 500px;
+
     border-radius: 12px;
-  //   padding-left:0;
-  //   padding-right: 0;
 
-
-  //   background: #4070f4;
     box-shadow: 0
       5px
       10px
@@ -295,4 +262,60 @@ fa-icon
 .form-control:focus {
   border-color: var(--primarygreen-color) !important; /* Change the border color when focused */
   box-shadow: 0 0 0 0.1rem var(--primarygreen-color); /* Optional: Add a box shadow when focused */
+}
+
+
+ @media (max-width: 600px) {
+  .register
+{
+    height: 100vh !important;
+    background-color: rgb(237 238 239)
+    // background-color: rgb(234, 236, 238)
+    ;
+}
+
+
+.wrapper {
+ 
+  max-width: 90%;
+  width: 100%;
+
+  border-radius: 12px;
+
+  box-shadow: 0
+    5px
+    10px
+    rgba(
+      0,
+      0,
+      0,
+      0.1
+    );
+  overflow: hidden;
+  position: relative;
+}
+  header
+  {
+    background-color: var(--primarygreen-color);
+    height: 116px;
+    width: 100%;
+    border-radius: 2%;
+    position: absolute;
+    top: -17px;
+    color: white;
+  }
+  h2
+  {
+    bottom: -37%;
+    position: relative;
+    left: 40%;
+    text-transform: capitalize;
+    
+    font-size: 30px;
+ 
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
 }

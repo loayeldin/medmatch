@@ -36,7 +36,7 @@
 
         <li class="nav-item dropdown" routerLinkActive="active">
           <a  class="nav-link-design dropdown-toggle" [class.scrolledcolor]="isScrolled"  role="button" data-toggle="dropdown" aria-expanded="false">
-            <fa-icon [icon]="faUser" class="mr-2"></fa-icon> Sign In
+            <fa-icon [icon]="faUser" class="mr-2 "></fa-icon> Sign In
           </a>
           <div  class="dropdown-menu">
             <a class="dropdown-item text-capitalize" routerLink="/signin">Sign In</a>
@@ -57,7 +57,7 @@
 
         <li class="nav-item dropdown" routerLinkActive="active">
           <a  class="nav-link-design dropdown-toggle"  [class.scrolledcolor]="isScrolled" role="button" data-toggle="dropdown" aria-expanded="false">
-            <fa-icon [icon]="faUser" class="mr-2"></fa-icon> <span class="green-dot"></span> {{username}}
+            <fa-icon [icon]="faUser" class="mr-2 user-icon "></fa-icon> {{username}}
           </a>
           <div  class="dropdown-menu">
             <a class="dropdown-item text-capitalize" style="cursor: pointer;" routerLink="profile" >Profile</a>

@@ -142,8 +142,36 @@ nav  .nav-link
     transform: scale(1.2);
 }
 
+.user-icon
+{
+    color: var(--primarygreen-color);
+}
+// .user-icon::after
+// {
+//     content: "";
+//     position: absolute;
+//     width: 6px;
+//     height: 6px;
+//     background-color: var(--primarygreen-color);
+//     border-radius: 50%;
+    
+//     left: 28%;
+//     top: 15%;
+// }
 @media (max-width: 767px)
 {
+    // .user-icon::after
+    // {
+    //     content: "";
+    //     position: absolute;
+    //     width: 6px;
+    //     height: 6px;
+    //     background-color: var(--primarygreen-color);
+    //     border-radius: 50%;
+        
+    //     left: 5%;
+    //     top: 15%;
+    // }
     .nav-link-design[_ngcontent-ng-c874738857]:hover {
         color: var(--primarygreen-color) !important;
             transform: scale(1);
@@ -185,6 +213,18 @@ nav  .nav-link
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    // .user-icon::after
+    // {
+    //     content: "";
+    //     position: absolute;
+    //     width: 6px;
+    //     height: 6px;
+    //     background-color: var(--primarygreen-color);
+    //     border-radius: 50%;
+        
+    //     left: 4%;
+    //     top: 15%;
+    // }
     .nav-link-design[_ngcontent-ng-c874738857]:hover {
         color: var(--primarygreen-color) !important;
             transform: scale(1);
@@ -227,3 +267,57 @@ nav  .nav-link
 // nav[_ngcontent-ng-c874738857] {
 //     background-color: white !important;
 // }
+
+@media (max-width: 600px) 
+{
+    nav
+    {
+      padding-left: 0 !important;
+      padding-top: 20px;
+    }
+        .navbar-brand
+    {
+        // color: white !important;
+        width: 250px;
+
+        height: 70px;
+        font-size: 28px !important;
+        margin-right: 40px;
+
+    
+    
+    }
+    .navbar-brand .logoImg 
+    {
+        margin-top: 12px;
+    width: 50%;
+    
+    transform: scale(1.6);
+    height: 100%;
+        
+    }
+    .navbar-brand img.logoText
+    {
+    
+    margin-top: -14px !important;
+        margin-top: 0px;
+    width: 70%;
+    
+    transform: scale(2.2);
+    height: 100%;
+        
+    }
+
+    //     .user-icon::after
+    // {
+    //     content: "";
+    //     position: absolute;
+    //     width: 6px;
+    //     height: 6px;
+    //     background-color: var(--primarygreen-color);
+    //     border-radius: 50%;
+        
+    //     left: 7%;
+    //     top: 15%;
+    // }
+}
