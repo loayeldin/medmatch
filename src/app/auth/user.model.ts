@@ -4,9 +4,9 @@ export class User
     constructor(
 
         public userName:string,
-        public message:string,
+       
         public token:string,
-        public _tokenExpirationDate:Date
+        public _tokenExpirationDate:any
 
     ){}
 

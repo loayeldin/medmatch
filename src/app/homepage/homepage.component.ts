@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { faMagnifyingGlass,faUser ,faDownload,faAppleAlt,faPills,faListCheck,faCircleInfo,faArrowRight,faSearch, faPeopleGroup, faMobile, faShieldHalved,faKey} from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from '../auth/auth.service';
 import { HomeService } from './home.service';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-homepage',
@@ -25,6 +26,7 @@ export class HomepageComponent {
   imgPath:string;
   loggedIn=false
   searchValue:any
+  
   constructor(private authService:AuthService,private HomeService:HomeService){
     this.imgPath = "../../assets/scan.jpg"
   }
@@ -48,46 +50,61 @@ export class HomepageComponent {
 
   ngOnInit()
   {
-                // gooood solution
-    // if (Object.keys(this.authService.user.getValue()).length === 0) {
-    //   // User is empty
-    //   // Perform the desired actions here
-    //   console.log('not user')
-    // } else {
-    //   // User is not empty
-    //   // Perform the desired actions here
-    //   console.log("user")
-    // }
+       
                           //another gooood solution
-    console.log(this.authService.loggedIn.value)
 
-    this.authService.loggedIn.subscribe(data=>
+    // this.authService.loggedIn.subscribe(data=>
+    //   {
+
+    //     if(data)
+    //     {
+    //       this.loggedIn=true
+    //       console.log("user")
+    //     }
+    //     else
+    //     {
+    //       console.log("not user")
+    //       this.loggedIn=false
+    //     }
+    //   })
+
+    this.authService.getCookies()
+     this.authService.user.subscribe(data=>
       {
-        if(data)
-        {
+        // if(data.value)
+        // {
+        //   this.loggedIn=true
+
+        //   console.log(data)
+        // }
+        // else
+        // {
+        //   console.log('a7aaa')
+        //    this.loggedIn=false
+
+        // }
+
+
+
+        if (Object.keys(this.authService.user.getValue()).length !== 0) {
+          // `user` variable contains values
+          // Perform your logic here
           this.loggedIn=true
-          console.log("user")
-        }
-        else
-        {
-          console.log("not user")
-          this.loggedIn=false
+
+           console.log(data)
+
+
+        } else {
+          // `user` variable does not contain values
+          // Perform your logic here
+          console.log('a7aaa')
+           this.loggedIn=false
         }
       })
 
-
-
-    // if(this.authService.loggedIn.value)
-    // {
-    //   this.loggedIn=true
-    //   console.log("user")
-    // }
-    // else
-    // {
-    //   console.log("not user")
-    //   this.loggedIn=false
-    // }
     
+
+
     
     
     

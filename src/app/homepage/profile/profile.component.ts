@@ -6,6 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/auth/auth.service';
 import { BehaviorSubject } from 'rxjs';
 import { faUser,faRectangleList,faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import { CookieService } from 'ngx-cookie-service';
 
 import { User } from "../../auth/user.model";
 
@@ -31,9 +32,9 @@ export class ProfileComponent {
   orderDrugDetails:any
   updateUserN: BehaviorSubject<User> = new BehaviorSubject<User>({} as User);
 
-constructor(private http:HttpClient, private AuthService:AuthService){}
+constructor(private http:HttpClient, private AuthService:AuthService,private CookieService:CookieService){}
 
-ngOnInit()
+  ngOnInit()
   {
     this.AuthService.user.subscribe(data=>
       {
@@ -100,6 +101,7 @@ ngOnInit()
 
   updateUserName(username:any)
   {
+    this.profileLoaded = false
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.oldProfileData.token}`
     });
@@ -112,8 +114,9 @@ ngOnInit()
         const currentUser = this.AuthService.user.getValue();
         currentUser.userName = username.userName
         this.AuthService.user.next(currentUser)
+        this.CookieService.set('userName',currentUser.userName)
         console.log(this.AuthService.user.value.userName,'aaaaaaaaaaa')
-   
+        this.profileLoaded = true
       },
       (error) => {
         // Handle errors

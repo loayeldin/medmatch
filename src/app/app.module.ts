@@ -21,6 +21,8 @@ import { MobilefeaturesComponent } from './features/mobilefeatures/mobilefeature
 import { DesktopfeaturesComponent } from './features/desktopfeatures/desktopfeatures.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChatComponent } from './chat/chat.component';
+import {CookieService} from 'ngx-cookie-service'
+
 
 @NgModule({
   declarations: [
@@ -46,10 +48,12 @@ import { ChatComponent } from './chat/chat.component';
     FontAwesomeModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+ 
 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
