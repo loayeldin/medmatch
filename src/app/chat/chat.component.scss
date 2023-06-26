@@ -114,20 +114,82 @@ body {
     display: flex;
     justify-content: flex-end;
   }
-
+  .test{
+    padding-top: 5%;
+    width: 70%;
+    margin: auto; 
+  }
 
  // for gemy
   @media (max-width: 600px)
   {
     
+    .test{
+      padding-top: 22%;
+      margin: 0;
+      padding-left: 2%;
+      padding-right: 2%;
+      
+      h2{
+        font-size: 16px;
+      }
+      h3{
+        font-size: 14px;
+      }
+    }
+    
+
+    .chatbot{
+
+      width: 95%;
+      
+    }
   }
 
   @media (max-width: 767px)
   {
+    .test{
+      padding-top: 18%;
+      margin: 0;
+      padding-left: 2%;
+      padding-right: 2%;
+      
+      h2{
+        font-size: 20px;
+      }
+      h3{
+        font-size: 20px;
+      }
+    }
+    
 
+    .chatbot{
+
+      width: 95%;
+      
+    }
   }
 
-  @media (min-width: 768px) and (max-width: 991px)
+  @media (min-width: 768px) and (max-width: 1307px)
   {
+    .test{
+      padding-top: 7%;
+      margin: 0;
+      padding-left: 4%;
+      padding-right: 4%;
+      
+      h2{
+        font-size: 24px;
+      }
+      h3{
+        font-size: 24px;
+      }
+    }
+    
 
+    .chatbot{
+
+      width: 90%;
+      
+    }
   }

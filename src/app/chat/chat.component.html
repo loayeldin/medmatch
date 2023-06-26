@@ -1,9 +1,11 @@
-<div class="test" style="margin: auto; padding-top: 5%; width: 70%;"> 
+<div class="t">
+  
+  <div class="test" > 
     <div class="chatbot bg-light position-fixed shadow-lg bg-body-tertiary rounded " >
 
       <div class="header  p-2 text-center">
         <h2 class="m-auto">Chatbot</h2>
-        <span class="material-symbols-rounded">close</span>
+        
       </div>
       <ul class="chatbox p-4 pb-5 overflow-y-auto" style="height: 70vh;">
         <div *ngIf="showChatbot" class="chatbot-container">
@@ -26,4 +28,6 @@
         <span id="send-btn" class="material-symbols-rounded send" (click)="sendMessage()">send</span>
       </div>
     </div>
-   </div>
+</div>
+
+</div>

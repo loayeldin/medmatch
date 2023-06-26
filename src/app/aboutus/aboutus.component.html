@@ -51,15 +51,15 @@
     <h1 >Our Team</h1>
     </div>
   </div>
-<div class="container containerss py-5">
-  <div *ngFor="let member of team">
-    <div class="icon-image">
+<div class="container containerss  py-5">
+  <div class="about" *ngFor="let member of team">
+    <div class="icon-image ">
       <div class="icon">
-        <img [src]="member.image" alt="" />
+        <img [src]="member.image" class="w-100" alt="" />
       </div>
-      <div class="hover-image one">
+      <div class="hover-image one ">
         <div class="img">
-          <img [src]="member.image" alt="" />
+          <img [src]="member.image" class="" alt="" />
         </div>
         <div class="content">
           <div class="details">

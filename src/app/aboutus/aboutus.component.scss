@@ -186,10 +186,20 @@
       width: 50px;
       margin: 0 3px;
     }
-  
+    .icon-image{
+     width: 100%;
+    }
+    .icon-image .icon{
+      width: 12px;
+      height: 20px;
+      border-radius: 50%;
+      margin-left: 2px;
+    }
     .icon-image .icon img {
-      height: 90%;
-      width: 90%;
+      height: 100%;
+      width: 100%;
+      border: 0.5px solid #0396FF;
+      
     }
   
     .icon-image::before {
@@ -227,18 +237,142 @@
     .content .details .job {
       font-size: 14px;
     }
+    .details{
+      z-index: 0;
+    }
+    .our-title h1 {
+      font-size: 24px;
+    }
+  }
+@media (min-width: 600px) and (max-width: 767px)
+  {
+    .icon-image {
+      height: 50px;
+      width: 50px;
+      margin: 0 3px;
+    }
+    .icon-image{
+     width: 100%;
+    }
+    .icon-image .icon{
+      width: 300px;
+      height: 30px;
+      border-radius: 50%;
+      margin-left: 2px;
+    }
+    .icon-image .icon img {
+      height: 100%;
+      width: 100%;
+       
+      border: 3px solid #0396FF;
+    }
   
+    .icon-image::before {
+      width: 40px;
+      height: 40px;
+      top: -40px;
+    }
+  
+    .icon-image .hover-image {
+      height: 250px;
+      width: 150px;
+      bottom: 80px;
+    }
+  
+    .hover-image img {
+      border: 2px solid #fff;
+   
+    //   position: absolute;
+    // height: 100%;
+    // width: 100%;
+    // object-fit: cover;
+    // border: 3px solid #fff;
+    // border-radius: 25px;
+    }
+  
+    .content .details {
+      padding: 1px;
+      border-radius: 8px;
+    }
+  
+    .content .details .name {
+      font-size: 16px;
+    }
+  
+    .content .details .job {
+      font-size: 14px;
+    }
+    .details{
+      z-index: 0;
+    }
     .our-title h1 {
       font-size: 24px;
     }
   }
 
-  @media (max-width: 767px)
+  @media (min-width: 600px) and (max-width: 991px)
   {
-
-  }
-
-  @media (min-width: 768px) and (max-width: 991px)
-  {
-
+    .icon-image {
+      height: 50px;
+      width: 50px;
+      margin: 0 3px;
+    }
+    .icon-image{
+     width: 100%;
+    }
+    .icon-image .icon{
+      width: 40px;
+      height: 45px;
+      border-radius: 50%;
+      margin-left: 2px;
+      
+    }
+    .icon-image .icon img {
+      height: 100%;
+      width: 100%;
+      border: 0; 
+      border: 3px solid #0396FF;
+    }
+  
+    .icon-image::before {
+      width: 40px;
+      height: 40px;
+      top: -40px;
+    }
+  
+    .icon-image .hover-image {
+      height: 250px;
+      width: 150px;
+      bottom: 80px;
+    }
+  
+    .hover-image img {
+      border: 2px solid #fff;
+   
+    //   position: absolute;
+    // height: 100%;
+    // width: 100%;
+    // object-fit: cover;
+    // border: 3px solid #fff;
+    // border-radius: 25px;
+    }
+  
+    .content .details {
+      padding: 1px;
+      border-radius: 8px;
+    }
+  
+    .content .details .name {
+      font-size: 16px;
+    }
+  
+    .content .details .job {
+      font-size: 14px;
+    }
+    .details{
+      z-index: 0;
+    }
+    .our-title h1 {
+      font-size: 24px;
+    }
   }
