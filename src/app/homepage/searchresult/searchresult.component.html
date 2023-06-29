@@ -17,7 +17,7 @@
 
 
 <div class="all">
-    <div class="container">
+    <div class="mycontainer">
 
         <div class="table-header d-flex justify-content-between align-items-center">
             <h2>drugname</h2>
@@ -34,9 +34,9 @@
                 <tr>
                     <th>#</th>
                     <th>Drug Name</th>
-                    <th>activeIngredient</th>
-                    <th>price</th>
-                    <th>alternative</th>
+                    <th>ActiveIngredient</th>
+                    <th>Price</th>
+                    <th>Alternative</th>
                 </tr>
             </thead>
 
@@ -63,7 +63,11 @@
                     <td>{{drug.name}}</td>
                     <td>{{drug.activeIngredient}}</td>
                     <td>{{drug.price}} L.E</td>
-                    <td><button class="btn btn-success text-capitalize" (click)="getAlternatives(i)" data-toggle="modal" data-target="#staticBackdrop">alternatives</button></td>
+                    <td class="d-flex justify-content-between align-items-center">
+                        <button class="btn btn-success text-capitalize" (click)="getAlternatives(i)" data-toggle="modal" data-target="#staticBackdrop">alternatives</button>
+                        <button class="btn btn-danger text-capitalize" (click)="getDrugId(i)" data-toggle="modal" data-target="#staticBackdropquantity">add to cart</button>
+
+                    </td>
                 </tr>
 
               
@@ -80,7 +84,7 @@
 
 
   
-  <!-- Modal -->
+  <!-- alter Modal -->
   <div  class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
@@ -149,3 +153,110 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+    <!-- quantity Modal -->
+
+
+    <div  class="modal fade" id="staticBackdropquantity" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-md">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-capitalize" id="staticBackdropquantity">Drug Quantity</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+    
+    
+    
+                <form>
+                    <div class="d-flex justify-content-center align-items-center">
+                    <input 
+                    type="number"
+                    name="quantity"
+                    class="form-control w-25 quantityInput"
+                   
+                    
+                    [(ngModel)]="drugQuantity"
+                    >
+
+                   </div>
+                 
+
+
+                </form>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
+              <button type="button" class="btn btn-success"  (click)="getDrugQuantity()" >add to cart</button>
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+<!-- thank you modal-->
+
+
+<div  class="modal fade" id="staticBackdropThankYou" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md">
+      <div class="modal-content">
+        
+        <div class="modal-body">
+
+
+
+        
+
+
+
+        <div class="verify-icon d-flex justify-content-center align-items-center">
+            <fa-icon [icon]="faCheck" class="iconn" ></fa-icon>
+            
+        </div>
+
+
+        <div class="thank-you text-center">
+            <h3 class="text-capitalize">thank you</h3>
+            <p>your item has been successfully added to cart</p>
+            <button class="btn btn-success w-100"> ok</button>
+
+        </div>
+
+
+
+
+
+
+
+        </div>
+     
+      </div>
+    </div>
+  </div>
+
+
+  <button class="btn btn-danger text-capitalize"  data-toggle="modal" data-target="#staticBackdropThankYou">add to cart</button>
+  

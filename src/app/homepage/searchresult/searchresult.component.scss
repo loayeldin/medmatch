@@ -9,6 +9,7 @@
 // {
 //   background-color: blue;
 // }
+
 .all
 {
   // background-color: red;
@@ -17,12 +18,23 @@
 height: 100vh;
 position: relative;}
 
-.container
+// .container
+// {
+//   position: absolute;
+//   // background-color: blue;
+//   top:19%;
+//   left:15%;
+// }
+
+.mycontainer
 {
+  width: 90%;
+  margin: auto;
   position: absolute;
-  // background-color: blue;
-  top:19%;
-  left:15%;
+  top: 20%;
+  left: 4%;
+
+  overflow: hidden;
 }
 .table-header
 {
@@ -44,7 +56,7 @@ position: relative;}
 {
   position: relative;
 }
-fa-icon
+.icon
 {
     position: absolute;
     top: 50%;
@@ -136,4 +148,56 @@ table td
   .table-header input {
     width: 100%;
   }
+}
+
+.quantityInput
+{
+  height: 42px;
+}
+
+.form-control:focus
+{
+  box-shadow: 2px 3px 1px var(--primarygreen-color) !important;
+  border-color: var(--primarygreen-color) !important;
+}
+
+.thank-you
+{
+  // width: 200px;
+  // height: 200px;
+  background-color: white;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%,-50%);
+}
+
+.verify-icon
+{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+ 
+
+  background-color: var(--primarygreen-color);
+}
+
+.verify-icon .iconn 
+{
+  color: white;
+  font-size: 40px;
+  
+}
+.modal-dialog-scrollable
+{
+  overflow: visible !important;
+}
+.modal-dialog-scrollable .modal-body {
+  overflow-y: visible !important;
+  overflow-x: visible !important;
+}
+.modal-open .modal {
+  overflow-x: auto !important;
+  overflow-y: auto;
 }

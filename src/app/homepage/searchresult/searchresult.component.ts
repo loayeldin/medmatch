@@ -1,7 +1,10 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { HomeService } from '../home.service';
-import { faMagnifyingGlass,faUser ,faArrowRight, fas} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass,faUser ,faArrowRight, fas,faCheck} from '@fortawesome/free-solid-svg-icons';
 import * as $ from 'jquery';
+import { NgForm } from '@angular/forms';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-searchresult',
@@ -9,7 +12,7 @@ import * as $ from 'jquery';
   styleUrls: ['./searchresult.component.scss']
 })
 export class SearchresultComponent {
-  constructor(private HomeService:HomeService ,private elementRef: ElementRef, private renderer: Renderer2){}
+  constructor(private HomeService:HomeService ,private elementRef: ElementRef,private http:HttpClient,private authService:AuthService){}
   searchResult:any
   errorSearch:any
   alterDrugsObj:any
@@ -17,6 +20,9 @@ export class SearchresultComponent {
   alterready = false
   searchResultReady = true
   faMagnifyingGlass = faMagnifyingGlass;
+  faCheck=faCheck
+  drugQuantity!:number
+  drugId:any
   ngOnInit()
   {
     // console.log(this.HomeService.searchResultDrugs.value)
@@ -97,16 +103,62 @@ export class SearchresultComponent {
     this.HomeService.searchAlterDrugs(id)
    
   }
+  getDrugId(index:number)
+  {
+    let id = this.searchResult.drugs[index]._id
+    this.drugId=id
+    console.log(id)
+
+  }
+  getDrugQuantity()
+  {
+    console.log(this.drugQuantity)
+
+    if(this.drugId && this.drugQuantity)
+    {
+      console.log('suces')
+      this.addDrugToCart()
+    }else
+    {
+      console.log('err')
+    }
+
+  }
+
+  addDrugToCart()
+  {
+    let token = this.authService.user.value.token
+ 
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+   return this.http.post(`https://medmatch.onrender.com/cart/addToCart/${this.drugId}`,
+   
+   {quantity:this.drugQuantity},
+
+   { headers }
+   
+   ).subscribe(
+      (response) => {
+        // Handle the response
+        console.log(response)
+     
+      },
+      (error) => {
+        // Handle errors
+        console.log(error.error.message)
+       
+      }
+    );
+     
+  }
 
 
 
-  // handleReq(data:any)
-  // {
-  //   this.alterDrugsObj = data
-  //   this.alterDrugsData = data.similarDrugs
-  //   console.log(this.alterDrugsObj)
-  //   this.allready=true
-  // }
+
+
 
  
 }

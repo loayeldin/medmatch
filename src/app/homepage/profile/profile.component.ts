@@ -101,6 +101,7 @@ constructor(private http:HttpClient, private AuthService:AuthService,private Coo
 
   updateUserName(username:any)
   {
+
     this.profileLoaded = false
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${this.oldProfileData.token}`

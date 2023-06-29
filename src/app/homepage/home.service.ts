@@ -78,5 +78,9 @@ export class HomeService {
     this.alterDrugsloaded.next(true)
  
   }
+
+
+
+
  
 }
