@@ -161,7 +161,7 @@
     <!-- quantity Modal -->
 
 
-    <div  class="modal fade" id="staticBackdropquantity" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div  class="modal fade " id="staticBackdropquantity" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-md">
           <div class="modal-content">
             <div class="modal-header">
@@ -172,27 +172,28 @@
             </div>
             <div class="modal-body">
     
-    
-    
-                <form>
-                    <div class="d-flex justify-content-center align-items-center">
-                    <input 
-                    type="number"
-                    name="quantity"
-                    class="form-control w-25 quantityInput"
-                   
-                    
-                    [(ngModel)]="drugQuantity"
-                    >
+     
+   
+        <form #quantityForm="ngForm" (ngSubmit)="onSubmit(quantityForm)">
+            <div class="d-flex justify-content-center align-items-center">
+            <input 
+            type="number"
+            name="quantity"
+            class="form-control w-25 quantityInput"
+        
+            required
+            [(ngModel)]="drugQuantity"
+            >
 
-                   </div>
-                 
+            </div>
+            <div class="d-flex justify-content-end mt-4">
+                <button type="button" class="btn btn-danger mr-3" data-dismiss="modal" >Close</button>
+                <button type="submit" class="btn btn-success text-capitalize" [disabled]="!quantityForm.valid">add to cart</button>
+            </div>
 
+     
+        </form> 
 
-                </form>
-    
-    
-    
     
     
     
@@ -203,12 +204,7 @@
     
     
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal" >Close</button>
-              <button type="button" class="btn btn-success"  (click)="getDrugQuantity()" >add to cart</button>
-
-              
-            </div>
+           
           </div>
         </div>
       </div>
@@ -220,7 +216,7 @@
 <!-- thank you modal-->
 
 
-<div  class="modal fade" id="staticBackdropThankYou" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div  class="modal fade thankYou-modal" id="staticBackdropThankYou" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable modal-md">
       <div class="modal-content">
         

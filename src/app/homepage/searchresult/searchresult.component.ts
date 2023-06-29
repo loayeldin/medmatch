@@ -110,22 +110,34 @@ export class SearchresultComponent {
     console.log(id)
 
   }
-  getDrugQuantity()
+  onSubmit(form:NgForm)
   {
-    console.log(this.drugQuantity)
-
-    if(this.drugId && this.drugQuantity)
+    console.log(form.value)
+    if(this.drugId)
     {
       console.log('suces')
-      this.addDrugToCart()
+      this.addDrugToCart(form.value)
     }else
     {
       console.log('err')
     }
-
   }
+  // getDrugQuantity()
+  // {
+  //   console.log(this.drugQuantity)
 
-  addDrugToCart()
+  //   if(this.drugId && this.drugQuantity)
+  //   {
+  //     console.log('suces')
+  //     this.addDrugToCart()
+  //   }else
+  //   {
+  //     console.log('err')
+  //   }
+
+  // }
+
+  addDrugToCart(quantityForm:NgForm)
   {
     let token = this.authService.user.value.token
  
@@ -136,7 +148,7 @@ export class SearchresultComponent {
 
    return this.http.post(`https://medmatch.onrender.com/cart/addToCart/${this.drugId}`,
    
-   {quantity:this.drugQuantity},
+   quantityForm,
 
    { headers }
    
