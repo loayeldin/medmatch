@@ -1,0 +1,89 @@
+.all
+{
+    min-height: 100vh !important;
+    position: relative;
+    background-color: rgb(237 237 237);
+}
+.mycontainer
+{
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    overflow: hidden;
+    top: 20%;
+    left: 4%;
+
+    background-color: white;
+    border-radius: 20px;
+ 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+.mycontainer2
+{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+.first-card
+{
+    // background-color: rgb(244, 247, 249);
+    background-color: white;
+    padding: 40px;
+    height: auto;
+    border-radius: 20px;
+    
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    //-5px -5px 6px 3px rgba(0, 0, 0, 0.1)
+    // overflow: hidden;
+}
+.counter-design
+{
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    
+   
+  
+}
+.input-counter
+{
+    outline: none !important;
+    border: none !important;
+    width: 20px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.save-cart
+{
+    padding: 6px 20px;
+    font-size: 20px;
+}
+
+.summary
+{
+    background-color: rgb(249 249 249);
+    padding: 40px;
+}
+input:focus
+ {
+    box-shadow: 0
+      1px 1px 1.5px var(--primarygreen-color);
+    border-color:var(--primarygreen-color);
+}
+.form-control:focus 
+{
+        box-shadow: 0
+          1px 1px 1.5px var(--primarygreen-color);
+        border-color:var(--primarygreen-color);
+ }
+
+
+ #paymentMethod option:hover
+ {
+    background-color: var(--primarygreen-color) !important;
+    color: white !important;
+ }

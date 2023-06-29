@@ -1,10 +1,11 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
+import { Component, ElementRef,ViewChild } from '@angular/core';
 import { HomeService } from '../home.service';
 import { faMagnifyingGlass,faUser ,faArrowRight, fas,faCheck} from '@fortawesome/free-solid-svg-icons';
-import * as $ from 'jquery';
+declare var $:any
 import { NgForm } from '@angular/forms';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/auth/auth.service';
+
 
 @Component({
   selector: 'app-searchresult',
@@ -12,6 +13,7 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./searchresult.component.scss']
 })
 export class SearchresultComponent {
+  
   constructor(private HomeService:HomeService ,private elementRef: ElementRef,private http:HttpClient,private authService:AuthService){}
   searchResult:any
   errorSearch:any
@@ -73,8 +75,8 @@ export class SearchresultComponent {
 
   
   }
-  
 
+  
 
 
   searchh(value:any)
@@ -116,7 +118,7 @@ export class SearchresultComponent {
     if(this.drugId)
     {
       console.log('suces')
-      this.addDrugToCart(form.value)
+      this.addDrugToCart(form)
     }else
     {
       console.log('err')
@@ -148,7 +150,7 @@ export class SearchresultComponent {
 
    return this.http.post(`https://medmatch.onrender.com/cart/addToCart/${this.drugId}`,
    
-   quantityForm,
+   quantityForm.value,
 
    { headers }
    
@@ -156,6 +158,8 @@ export class SearchresultComponent {
       (response) => {
         // Handle the response
         console.log(response)
+        this.showSuccessMsg()
+        quantityForm.resetForm();
      
       },
       (error) => {
@@ -167,10 +171,36 @@ export class SearchresultComponent {
      
   }
 
+  showSuccessMsg()
+  {
+    $('#staticBackdropquantity').modal('hide') 
+      const comDiv = $('.overlay');
+      console.log(comDiv)
+    
+    
+      // comDiv.fadeIn()
+    
+      comDiv.fadeIn(700,function(){
+        $('.verify-icon').fadeIn(300,function(){  
+          $('.iconn').fadeIn(180,function(){ 
+            $('.thank-you-header').fadeIn(200,function(){
+              $('.thank-you-parag').fadeIn(200,function(){ 
+                $('.thank-you-btn').fadeIn(200)})})})})});
+ 
+
+  }
 
 
-
-
+  hideSuccessMsg()
+  {
+    $('.overlay').css('display','none')
+    $('.verify-icon').fadeOut()
+    $('.iconn').fadeOut()
+    $('.thank-you-header').fadeOut()
+    $('.thank-you-parag').fadeOut()
+    $('.thank-you-btn').fadeOut()
+    
+  }
 
  
 }

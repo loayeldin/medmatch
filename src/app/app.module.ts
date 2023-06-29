@@ -21,7 +21,11 @@ import { MobilefeaturesComponent } from './features/mobilefeatures/mobilefeature
 import { DesktopfeaturesComponent } from './features/desktopfeatures/desktopfeatures.component';
 import { FooterComponent } from './footer/footer.component';
 import { ChatComponent } from './chat/chat.component';
-import {CookieService} from 'ngx-cookie-service'
+import {CookieService} from 'ngx-cookie-service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartComponent } from './cart/cart.component';
+
+
 
 
 @NgModule({
@@ -40,7 +44,8 @@ import {CookieService} from 'ngx-cookie-service'
     MobilefeaturesComponent,
     DesktopfeaturesComponent,
     FooterComponent,
-    ChatComponent
+    ChatComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,8 @@ import {CookieService} from 'ngx-cookie-service'
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule
+    
     
  
 

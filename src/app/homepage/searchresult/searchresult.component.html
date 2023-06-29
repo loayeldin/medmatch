@@ -20,7 +20,7 @@
     <div class="mycontainer">
 
         <div class="table-header d-flex justify-content-between align-items-center">
-            <h2>drugname</h2>
+            <h2 class="text-capitalize">drugs</h2>
 
           
             <div class="input-field">
@@ -172,6 +172,8 @@
             </div>
             <div class="modal-body">
     
+
+                
      
    
         <form #quantityForm="ngForm" (ngSubmit)="onSubmit(quantityForm)">
@@ -180,7 +182,9 @@
             type="number"
             name="quantity"
             class="form-control w-25 quantityInput"
-        
+            placeholder="quantity"
+            min="1"
+            max="10"
             required
             [(ngModel)]="drugQuantity"
             >
@@ -188,10 +192,10 @@
             </div>
             <div class="d-flex justify-content-end mt-4">
                 <button type="button" class="btn btn-danger mr-3" data-dismiss="modal" >Close</button>
-                <button type="submit" class="btn btn-success text-capitalize" [disabled]="!quantityForm.valid">add to cart</button>
+                <button type="submit" class="btn btn-success text-capitalize" [disabled]="!quantityForm.valid" >add to cart</button>
             </div>
 
-     
+
         </form> 
 
     
@@ -213,46 +217,25 @@
 
 
 
-<!-- thank you modal-->
+
+<!--completed add to cart-->  
 
 
-<div  class="modal fade thankYou-modal" id="staticBackdropThankYou" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-md">
-      <div class="modal-content">
+  <div class="overlay">
+
+    <div class="overlay-content text-center d-flex flex-column align-items-center justify-content-center">
         
-        <div class="modal-body">
-
-
-
-        
-
-
-
-        <div class="verify-icon d-flex justify-content-center align-items-center">
+        <div class="verify-icon d-flex justify-content-center align-items-center mt-2">
             <fa-icon [icon]="faCheck" class="iconn" ></fa-icon>
             
         </div>
 
 
-        <div class="thank-you text-center">
-            <h3 class="text-capitalize">thank you</h3>
-            <p>your item has been successfully added to cart</p>
-            <button class="btn btn-success w-100"> ok</button>
+        <div class="thank-you text-center mt-2">
+            <h3 class="text-capitalize thank-you-header">completed</h3>
+            <p class="thank-you-parag">your item has been successfully added to cart</p>
+            <button class="btn btn-success w-100 thank-you-btn" (click)="hideSuccessMsg()"> ok</button>
 
         </div>
-
-
-
-
-
-
-
-        </div>
-     
-      </div>
     </div>
   </div>
-
-
-  <button class="btn btn-danger text-capitalize"  data-toggle="modal" data-target="#staticBackdropThankYou">add to cart</button>
-  

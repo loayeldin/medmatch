@@ -1,5 +1,5 @@
 import { Component,HostListener  } from '@angular/core';
-import { faMagnifyingGlass,faUser } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass,faUser,faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { NavbarService } from './navbar.service';
 import { AuthService } from '../auth/auth.service';
 import {  Router } from '@angular/router';
@@ -14,6 +14,7 @@ import { User } from "../auth/user.model";
 export class NavbarComponent {
   faUser=faUser
   loggedIn=false
+  faCartShopping=faCartShopping
   username!:string
   isScrolled: boolean = false;
  

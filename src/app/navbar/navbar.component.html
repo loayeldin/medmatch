@@ -55,6 +55,14 @@
 
       <ul *ngIf="loggedIn"  class="navbar-nav ml-auto">
 
+        <li class="nav-item " routerLinkActive="active">
+          <a class="nav-link-design" [class.scrolledcolor]="isScrolled"  routerLink="/cart" >
+            <fa-icon [icon]="faCartShopping" class="fa-light mr-1 "></fa-icon>
+          cart
+          </a>
+        </li>
+
+
         <li class="nav-item dropdown" routerLinkActive="active">
           <a  class="nav-link-design dropdown-toggle"  [class.scrolledcolor]="isScrolled" role="button" data-toggle="dropdown" aria-expanded="false">
             <fa-icon [icon]="faUser" class="mr-2 user-icon "></fa-icon> {{username}}
