@@ -56,8 +56,10 @@
       <ul *ngIf="loggedIn"  class="navbar-nav ml-auto">
 
         <li class="nav-item " routerLinkActive="active">
-          <a class="nav-link-design" [class.scrolledcolor]="isScrolled"  routerLink="/cart" >
-            <fa-icon [icon]="faCartShopping" class="fa-light mr-1 "></fa-icon>
+          <a class="nav-link-design " [class.scrolledcolor]="isScrolled"  routerLink="/cart" >
+            <fa-icon [icon]="faCartShopping" class="fa-light mr-1 shopping-icon"></fa-icon>
+            <span class="cart-number" id="cart-number-animation">{{cartItemsNumber}}</span>
+            
           cart
           </a>
         </li>

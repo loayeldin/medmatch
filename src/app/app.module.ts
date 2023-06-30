@@ -24,6 +24,7 @@ import { ChatComponent } from './chat/chat.component';
 import {CookieService} from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -45,7 +46,8 @@ import { CartComponent } from './cart/cart.component';
     DesktopfeaturesComponent,
     FooterComponent,
     ChatComponent,
-    CartComponent
+    CartComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule
     
     
  

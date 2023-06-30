@@ -85,6 +85,10 @@ h1
     font-weight: bold;
     font-size: 22px;
 }
+.btn:focus
+{
+    box-shadow: none !important;
+}
 .search-input
 {
     width: 100%;

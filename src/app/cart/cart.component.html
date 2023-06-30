@@ -1,175 +1,246 @@
-<div class="all">
-<div class="mycontainer">
-    <div *ngIf="!cartLoaded" style="text-align: center;">
-        <app-loading-spinner></app-loading-spinner>
-    </div>
-    <div *ngIf="cartLoaded" class="row">
-        <div class="col-lg-8 shopping-cart">
-            <div class="mycontainer2">
+
+    <div class="all">
+        <div class="mycontainer">
+            <div *ngIf="!cartLoaded" style="text-align: center;">
+                <app-loading-spinner></app-loading-spinner>
+            </div>
+            <div *ngIf="cartLoaded" class="row">
+                <div class="col-lg-8 shopping-cart">
+                    <div class="mycontainer2">
+                            
+                        <div class="cart-header mb-5 d-flex justify-content-between align-items-center">
+                            <h2 class="text-capitalize">shopping cart</h2>
+                            <h5 class="text-capitalize">items: {{itemsNumber}}</h5>
+                        </div>
+        
+                        <hr class="mt-3">
+        
+                        
+                        <div  class="mycontainer3 default-first-card  mt-2 ">
+        
                     
-                <div class="cart-header mb-5 d-flex justify-content-between">
-                    <h2 class="text-capitalize">shopping cart</h2>
-                    <h5>items: {{itemsNumber}}</h5>
-                </div>
-
-                <hr class="mt-4">
-
-                <div *ngFor="let item of ShowCartData; let i = index" class="mycontainer3 first-card  mt-4 ">
-
-            
-                    <div class="row">
-                        
-                        <div class="drugName col-sm-6 d-flex justify-content-start align-items-center">
-                            <h5 class="text-capitalize">{{item.drug.name}}</h5>
-                        </div>
-
-                        <div class="drugquantity col-sm-1 d-flex align-items-center">
-                             <!-- <div class="counter-input d-flex justify-content-between align-items-center">
-                                <span  class=" counter-design mr-3" (click)="decrement()">-</span>
-                                <input type="number" [formControl]="counterFormControl" class="input-counter" >
-                                <span  class=" counter-design ml-2" (click)="increment()">+</span>
-                            </div>   -->
-
-                           
-                               <div class="counter-input d-flex justify-content-between align-items-center">
-
-                           
-                                  <div class="counter-input d-flex justify-content-between align-items-center">
-                                    <form [formGroup]="dynamicForm">
-                                        <div formArrayName="quantity">
-                                        <input type="number" [formControlName]="i" class="input-counter" [value]="quantity.controls[i].value">
-                                        </div>
-                                    </form>
-                                  </div>
-                                </div>
-                        
-                                 
-                                    
-                                   
+                            <div class="row">
                                 
-                            
+                                <div class="drugName col-md-4  d-flex justify-content-start align-items-center">
+                                    <h5 class="text-capitalize">drugname</h5>
+                                </div>
+        
+                                <div class="drugquantity col-md-3  d-flex align-items-center">
+                                    <h5 class="">quantity</h5>
+                                           
                              
+                                    
+                                </div>
+                                
+        
+        
+                                <div class="drugprice col-md-2    d-flex align-items-center">
+                                    <h5 class="">price</h5>
+                                </div>
+        
                         
-                           
-                            
-                            
+                                <div class="removeDrug col-md-2  d-flex align-items-center justify-content-center">
+                                    <h5  >remove</h5>
+                                </div>
+        
+                            </div>
+        
+        
+        
+                            <hr>
                         </div>
+        
+        
+        
+                        <div *ngFor="let item of ShowCartData; let i = index" class="mycontainer3 first-card  mt-2 ">
+        
+                    
+                            <div class="row">
+                                
+                                <div class="drugName col-md-4 d-flex justify-content-start align-items-center">
+                                    <h5 class="for-small-design text-capitalize">drugname:</h5>
+                                    <h5 class="text-capitalize drugName-content">{{item.drug.name}}</h5>
+                                </div>
+        
+                                <div class="drugquantity col-md-3 d-flex align-items-center">
+                                   
+                                   
+                                       <div class="counter-input d-flex justify-content-between align-items-center">
+        
+                                   
+                                          <div class="counter-input d-flex justify-content-between align-items-center">
+                                            <form [formGroup]="dynamicForm">
+                                                <div formArrayName="quantity" class="d-flex justify-content-center align-items-center">
+                                                    <h5 class="for-small-design">quantity:</h5>
+                                                <input type="number" [formControlName]="i" class="input-counter" [value]="quantity.controls[i].value" (change)="onQuantityChange($event.target, i)">
+                                                </div>
+                                            </form>
+                                          </div>
+                                        </div>
+                                
+                                         
+                                            
+                                           
+                                        
+                                    
+                                     
+                                
+                                   
+                                    
+                                    
+                                </div>
+                                
+        
+        
+                                <div class="drugprice col-md-2   d-flex align-items-center">
+                                    <h5 class="for-small-design text-capitalize">price:</h5>
+                                    <h5 class="drugprice-content">{{item.price}} L.E</h5>
+                                </div>
+        
                         
-
-
-                        <div class="drugprice col-sm-2  offset-1 d-flex align-items-center">
-                            <h6 class="">{{item.price}} L.E</h6>
+                                <div class="removeDrug col-md-3 d-flex align-items-center justify-content-center">
+                                 
+                                    <button class="btn btn-danger remove-btn" type="button" (click)="removeItem(i)"> <fa-icon [icon]="faTrash" class="fa-light remove-icon"></fa-icon> remove</button>
+                                </div>
+        
+                            </div>
+        
+        
+        
+                            <hr>
                         </div>
-
-                
-                        <div class="removeDrug col-sm-2 d-flex align-items-center">
-                            <span type="button" (click)="removeItem(i)" style="color: red;">X</span>
-                        </div>
-
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                        <!-- <div class="mt-3 d-flex justify-content-end align-items-end" >
+                            <button class="btn btn-success save-cart text-capitalize" (click)="test()"> save cart</button>
+                        </div> -->
+        
                     </div>
-
-
-
-
+        
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-                <div class="mt-3 d-flex justify-content-end align-items-end" >
-                    <button class="btn btn-success save-cart text-capitalize" (click)="test()"> save cart</button>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                <div class="col-lg-4 summary">
+                  <h2 class="text-capitalize">summary</h2>
+                  <hr class="mt-4">
+        
+                  <div class="d-flex justify-content-between">
+                    <h5 class="text-capitalize">items: {{itemsNumber}}</h5>
+                    <h6>{{totalPrice}} L.E</h6>
+                  </div>
+        
+                  <form #orderForm="ngForm" (ngSubmit)="onSubmitOrder(orderForm)">
+                   <div class="mt-3">
+                    <h5> shipping Address</h5>
+                    <input 
+                    type="text"
+                    class="form-control w-75 mt-3"
+                    name="shippingAddress"
+                    [(ngModel)]="shippingAddress"
+                    required
+                  
+                     >
+                   </div>
+        
+        
+                    <div class="mt-3">
+                        <h5>phone</h5>
+                        <input 
+                        type="text"
+                        class="form-control w-75 mt-3"
+                        name="phone"
+                        required
+                        placeholder="+20"
+                        [(ngModel)]="phone"
+                         >
+            
+                    </div>
+        
+        
+        
+                    <div class="mt-3">
+                        <h5>paymentMethod</h5>
+                        
+                        
+                          
+                            <select class="form-control mt-3 w-75" id="paymentMethod" style="cursor: pointer;" [(ngModel)]="paymentMethod" name="paymentMethod" >
+                              <option value="cashOnDelivery" class="text-capitalize " style="cursor: pointer;">CashOnDelivery</option>
+        
+                              <option value="visa" class="text-capitalize " style="cursor: pointer;" disabled >visa(not Support now)</option>
+                             
+                            </select>
+                        
+            
+        
+                          
+        
+                              
+                    </div>
+        
+                    <hr class="mt-4">
+                    <div class="total-price mt-5 d-flex justify-content-between">
+                        <h5 class="text-capitalize">total price:</h5>
+                        <h5>{{totalPrice}} L.E</h5>
+        
+                    </div>
+                    
+        
+                    <div class="d-flex justify-content-center align-items-center mt-5">
+                        <button type="submit" class="btn btn-success text-capitalize submit-order w-50 text-center" [disabled]="!orderForm.valid"> <fa-icon [icon]="faTruck" style="font-size: 21px;" class="mr-2"></fa-icon> submit order</button>
+                    </div>
+                  </form>
                 </div>
-
             </div>
-
+        
+        
+        
+        </div>
         </div>
 
 
 
 
+<!--completed add to cart-->  
 
 
+<div class="overlay">
 
-
-
-
-
-
-
-
-
-        <div class="col-lg-4 summary">
-          <h3>summary</h3>
-          <hr class="mt-4">
-
-          <div class="d-flex justify-content-between">
-            <span>items {{itemsNumber}}</span>
-            <span>price</span>
-          </div>
-
-          <form>
-           <div class="mt-3">
-            <h5> shipping Address</h5>
-            <input 
-            type="text"
-            class="form-control w-75 mt-3"
-            name="shippingAddress"
-            required
-             >
-           </div>
-
-
-            <div class="mt-3">
-                <h5>phone</h5>
-                <input 
-                type="number"
-                class="form-control w-75 mt-3"
-                name="phone"
-                required
-                 >
-    
-            </div>
-
-
-
-            <div class="mt-3">
-                <h5>paymentMethod</h5>
-                
-               
-                  
-                    <select class="form-control mt-3 w-75" id="paymentMethod" style="cursor: pointer;">
-                      <option value="cashOnDelivery" class="text-capitalize test" style="cursor: pointer;">CashOnDelivery</option>
-                      <option value="visa" class="text-capitalize test" style="cursor: pointer;" disabled>visa(not Support now)</option>
-                     
-                    </select>
-                 
-    
-            </div>
-
-            <hr class="mt-4">
-            <div class="total-price mt-5 d-flex justify-content-between">
-                <h5 class="text-capitalize">total price</h5>
-                <h5>{{totalPrice}} L.E</h5>
-
-            </div>
+    <div class="overlay-content text-center d-flex flex-column align-items-center justify-content-center">
+        
+        <div class="verify-icon d-flex justify-content-center align-items-center mt-2">
+            <fa-icon [icon]="faCheck" class="iconn" ></fa-icon>
             
+        </div>
 
-            <div class="d-flex justify-content-center align-items-center mt-5">
-                <button class="btn btn-success text-capitalize submit-order w-75">submit order</button>
-            </div>
-          </form>
+
+        <div class="thank-you text-center mt-2">
+            <h3 class="text-capitalize thank-you-header">Removed</h3>
+            <p class="thank-you-parag">your item has been successfully removed from cart</p>
+            <button class="btn btn-success w-100 thank-you-btn" (click)="hideSuccessMsg()"> ok</button>
+
         </div>
     </div>
-
-
-
-</div>
-</div>
+  </div>

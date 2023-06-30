@@ -25,6 +25,7 @@ export class SearchresultComponent {
   faCheck=faCheck
   drugQuantity!:number
   drugId:any
+  ShowCartData!:any
   ngOnInit()
   {
     // console.log(this.HomeService.searchResultDrugs.value)
@@ -143,7 +144,7 @@ export class SearchresultComponent {
   {
     let token = this.authService.user.value.token
  
-
+console.log(quantityForm.value,this.drugId,token)
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -187,6 +188,7 @@ export class SearchresultComponent {
               $('.thank-you-parag').fadeIn(200,function(){ 
                 $('.thank-you-btn').fadeIn(200)})})})})});
  
+                this.showCartLength()
 
   }
 
@@ -199,6 +201,55 @@ export class SearchresultComponent {
     $('.thank-you-header').fadeOut()
     $('.thank-you-parag').fadeOut()
     $('.thank-you-btn').fadeOut()
+    
+  }
+
+
+
+  showCartLength()
+  {
+    
+    let token = this.authService.user.value.token
+    console.log(token)
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+    return this.http.get('https://medmatch.onrender.com/cart',{headers}).subscribe(data=>{
+      console.log(data)
+    
+    if(data !=null)
+    {
+     
+      this.handleshowCartLength(data)
+    }else if(data==null)
+    {
+      
+      this.ShowCartData = [] 
+      this.authService.cartItemsNumber.next(0)
+  
+     
+    }
+     
+    },
+    err=>{
+      console.log(err.error)
+      
+    }
+    )
+  }
+
+
+  handleshowCartLength(data:any)
+  {
+ 
+    this.ShowCartData = data.cart.items
+    this.authService.cartItemsNumber.next(this.ShowCartData.length)
+    
+    
+   
+ 
+  
+  
     
   }
 

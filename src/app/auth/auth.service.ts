@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 
 import { User } from "./user.model";
-import { fas } from '@fortawesome/free-solid-svg-icons';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,6 +15,7 @@ export class AuthService {
   // user = new BehaviorSubject<User>(<User>({}))
   user = new BehaviorSubject<User>({} as User);
   loggedIn= new BehaviorSubject<boolean>(false);
+    cartItemsNumber= new BehaviorSubject<number>(0);
   // token_key= new BehaviorSubject<any>(null);
   // expireDate = new BehaviorSubject<any>(null);
   private sessionCheck!: Subscription;

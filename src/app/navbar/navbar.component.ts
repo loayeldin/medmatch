@@ -4,26 +4,37 @@ import { NavbarService } from './navbar.service';
 import { AuthService } from '../auth/auth.service';
 import {  Router } from '@angular/router';
 
+
 import { User } from "../auth/user.model";
+import { CartComponent } from '../cart/cart.component';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+ 
 })
+
 export class NavbarComponent {
+
   faUser=faUser
   loggedIn=false
   faCartShopping=faCartShopping
   username!:string
   isScrolled: boolean = false;
+  cartItemsNumber!:number
  
-  constructor(private navbarService:NavbarService,private authService:AuthService, private router:Router)
+  constructor(private navbarService:NavbarService,private authService:AuthService, private router:Router,private cartTs:CartComponent)
   { }
 
   ngOnInit()
   {
     
+
+
+    // $('#cart-number-animation').on('change',()=>{})
+
     window.addEventListener('scroll', ()=>{ this.isScrolled = window.pageYOffset > 80;});
   //  this.authService.loggedIn.subscribe(data=>
   //   {
@@ -43,12 +54,22 @@ export class NavbarComponent {
   //       this.loggedIn =false
   //     }
   //   })
+  this.authService.cartItemsNumber.subscribe(data=>
+    {
+    
+      this.cartItemsNumber = data
+      $('cart-number').animate({ left: '0' });
+      
 
+  
+    })
+  
 
 
     this.authService.getCookies()
     this.authService.user.subscribe(data=>
      {
+      console.log(data)
       //  if(data)
       //  {
       
@@ -88,7 +109,6 @@ export class NavbarComponent {
       }
      })
 
-    
 
     
   }
