@@ -24,13 +24,37 @@
                         </div>
 
                         <div class="drugquantity col-sm-1 d-flex align-items-center">
-                            <div class="counter-input d-flex justify-content-between align-items-center">
+                             <!-- <div class="counter-input d-flex justify-content-between align-items-center">
                                 <span  class=" counter-design mr-3" (click)="decrement()">-</span>
-                                <input type="number" [formControl]="counterFormControl" class="input-counter" [value]="item.quantity">
+                                <input type="number" [formControl]="counterFormControl" class="input-counter" >
                                 <span  class=" counter-design ml-2" (click)="increment()">+</span>
-                            </div>
+                            </div>   -->
+
+                           
+                               <div class="counter-input d-flex justify-content-between align-items-center">
+
+                           
+                                  <div class="counter-input d-flex justify-content-between align-items-center">
+                                    <form [formGroup]="dynamicForm">
+                                        <div formArrayName="quantity">
+                                        <input type="number" [formControlName]="i" class="input-counter" [value]="quantity.controls[i].value">
+                                        </div>
+                                    </form>
+                                  </div>
+                                </div>
+                        
+                                 
+                                    
+                                   
+                                
+                            
+                             
+                        
+                           
+                            
                             
                         </div>
+                        
 
 
                         <div class="drugprice col-sm-2  offset-1 d-flex align-items-center">
