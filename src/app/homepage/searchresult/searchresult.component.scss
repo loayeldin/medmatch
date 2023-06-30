@@ -136,9 +136,11 @@ table td
 }
 
 @media (max-width: 576px) {
-  .container {
-    top: 5%;
-    left: 2%;
+
+  .mycontainer {
+    width: 100% !important;
+    top: 15%;
+    left: 0%;
   }
 
   .modal-dialog.modal-xl {
@@ -148,7 +150,28 @@ table td
   .table-header input {
     width: 100%;
   }
+  tbody tr td 
+  {
+    font-size: 13px;
+  }
+  tbody tr td button
+  {
+    font-size: 14px;
+    margin-top: 4px;
+    padding: 4px !important;
+  }
+  thead tr th 
+  {
+    font-size: 13px !important;
+  }
+  table td 
+{
+  max-width: 220px;
 }
+}
+
+
+
 
 .quantityInput
 {
