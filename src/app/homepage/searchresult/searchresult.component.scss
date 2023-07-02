@@ -72,7 +72,19 @@ table td
   max-width: 250px;
 }
 
+@media (min-width: 768px) and (max-width: 991px)
+{  .mycontainer {
+    width: 95% !important;
+    top: 15%;
+    left: 2.5%;
+  }
 
+    .btn-danger
+    {
+
+      margin-top: 4px;
+    }
+}
 @media (max-width: 767px) {
   // .container {
   //   top:10%;
@@ -84,6 +96,11 @@ table td
   //   left:0%;
   // }
 
+  .mycontainer {
+    width: 96% !important;
+    top: 15%;
+    left: 2%;
+  }
   .container {
     width: 100%;
     max-width: 100%;
@@ -115,24 +132,25 @@ table td
   {
     font-size: 15px;
   }
-  tbody tr td .btn-success
+ 
+
+  .btn-danger
   {
-    font-size: 14px !important;
-    padding: 10px 2px;
+   margin-top: 4px;
   }
 }
 
 
 
 @media (max-width: 768px) {
-  .container {
-    top: 10%;
-    left: 5%;
-  }
+  // .container {
+  //   top: 10%;
+  //   left: 5%;
+  // }
 
-  .modal-dialog.modal-xl {
-    max-width: 90%;
-  }
+  // .modal-dialog.modal-xl {
+  //   max-width: 90%;
+  // }
 }
 
 @media (max-width: 576px) {
@@ -154,11 +172,17 @@ table td
   {
     font-size: 13px;
   }
-  tbody tr td button
+  tbody tr td .btn-success
   {
-    font-size: 14px;
+    font-size: 12px !important;
+  
+    padding: 3px !important;
+  }
+  .btn-danger
+  {
+    font-size: 12px !important;
+    padding: 3px !important;
     margin-top: 4px;
-    padding: 4px !important;
   }
   thead tr th 
   {

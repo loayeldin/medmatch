@@ -4,8 +4,16 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { AuthService } from 'src/app/auth/auth.service';
 import { faCheck,faTrash,faTruck} from '@fortawesome/free-solid-svg-icons';
 import { BehaviorSubject } from 'rxjs';
+import anime from 'animejs/lib/anime.es.js';
+
+
+
+
+
+
 
 declare var $:any
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -15,6 +23,10 @@ declare var $:any
   providedIn: 'root'
 })
 export class CartComponent {
+
+
+
+
   // counterForm!: FormGroup;
   ShowCartData!:any
   faTrash=faTrash
@@ -24,7 +36,8 @@ export class CartComponent {
   itemsNumber:number = 0
   shippingAddress!:string
   phone!:string
-  paymentMethod:string = 'CashOnDelivery'
+  paymentMethod!:string 
+  cartHasData=false
   // itemsNumber= new BehaviorSubject<number>(0);
 
   cartLoaded = true
@@ -46,6 +59,9 @@ export class CartComponent {
 
     console.log(this.dynamicForm)
     
+    this.paymentMethod = 'cashOnDelivery'
+
+
 
   }
 
@@ -109,6 +125,7 @@ export class CartComponent {
     });
     return this.http.get('https://medmatch.onrender.com/cart',{headers}).subscribe(data=>{
       console.log(data)
+      console.log(this.ShowCartData)
     
     if(data !=null)
     {
@@ -117,10 +134,11 @@ export class CartComponent {
     }else if(data==null)
     {
       this.totalPrice = 0
-      this.ShowCartData = [] 
+      this.ShowCartData = undefined
       this.authService.cartItemsNumber.next(0)
       this.itemsNumber = 0
       this.cartLoaded = true
+      console.log(this.ShowCartData)
     }
      
     },
@@ -139,7 +157,7 @@ export class CartComponent {
     this.authService.cartItemsNumber.next(this.ShowCartData.length)
     this.itemsNumber =  this.authService.cartItemsNumber.value
     this.cartLoaded = true
-    console.log(this.ShowCartData,this.authService.cartItemsNumber)
+    console.log(this.ShowCartData ,this.ShowCartData.length,this.authService.cartItemsNumber)
 
     const quantityArray = this.dynamicForm.get('quantity') as FormArray;
     console.log(quantityArray)
@@ -205,11 +223,15 @@ export class CartComponent {
 
   onSubmitOrder(form:NgForm)
   {
-    console.log(form.value)
-    this.submitOrderPost(form.value)
+    console.log(form.form.controls['shippingAddress'] )
+  
+
+
+    this.submitOrderPost(form.value,form)
+
   }
 
-  submitOrderPost(form:NgForm)
+  submitOrderPost(form:NgForm,NgForm:NgForm)
   {
    console.log(form)
     let token = this.authService.user.value.token
@@ -219,7 +241,114 @@ export class CartComponent {
     });
     return this.http.post('https://medmatch.onrender.com/order/checkout',form,{headers}).subscribe(data=>{
       console.log(data)
-     
+        
+      const timeline = anime.timeline({
+        easing: 'easeInSine',
+      })
+  
+      timeline.add({
+        targets: '.btn-order .default',
+        opacity: [1, 0],
+        duration: 200
+      })
+  
+      timeline.add({
+        targets: '.btn-order',
+        height: ['50px', '6px'],
+        duration: 400
+      })
+  
+      timeline.add({
+        targets: '.car',
+        opacity: [0, 1]
+      }, '-=600')
+  
+      timeline.add({
+        targets: '.box',
+        translateX: [0, '210px'],
+        duration: 300
+      })
+  
+      timeline.add({
+        targets: '.box',
+        translateY: [0, '90px'],
+        duration: 300
+      })
+  
+      timeline.add({
+        targets: '.light',
+        opacity: [0, 1],
+        duration: 200
+      })
+  
+      timeline.add({
+        targets: '.car',
+        translateX: [0, '130px'],
+        duration: 800,
+        easing: 'easeInQuart',
+      })
+  
+      timeline.add({
+        targets: '.car',
+        opacity: [1, 0]
+      }, '-=600')
+  
+      timeline.add({
+        targets: '.btn-order',
+        height: ['6px', '50px'],
+        duration: 400
+      })
+  
+      timeline.add({
+        targets: '.btn-order .complited',
+        opacity: [0, 1],
+        duration: 200
+      })
+  
+      timeline.add({
+        targets: '.complited svg',
+        strokeDashoffset: ['16px', 0],
+        duration: 300
+      })
+  
+      timeline.finished.then(() => {
+        // Reset the properties of your elements to their initial values
+  
+        // anime({
+        //   targets: '.btn-order .complited',
+        //   opacity: [1, 0],
+        //   duration: 1500
+        // })
+        // anime({
+        //   targets: '.complited svg',
+        //   strokeDashoffset: [0,'16px'],
+        //   duration: 700
+        // })
+        // anime({
+        //   targets: '.btn-order .default',
+        //   opacity: [0,1],
+        //   duration: 1500,
+        // });
+      
+        // anime({
+        //   targets: '.btn-order',
+        //   height: '50px',
+        //   duration: 100,
+        // });
+      
+        // anime({
+        //   targets: '.car',
+        //   opacity: 0,
+        //   duration: 100,
+        // });
+      
+        // Reset other properties of your elements as needed
+        this.showCart()
+        NgForm.resetForm()
+      });
+    
+  
+  
     },
     err=>{
       console.log(err.error)

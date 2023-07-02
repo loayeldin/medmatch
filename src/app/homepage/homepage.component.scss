@@ -45,10 +45,7 @@
     height: 100%;
     background-color: rgba(10,10,10,.3);
 }   
-.content
-{
-    
-}
+
 h1
 {
     max-width: 850px;
@@ -194,10 +191,7 @@ h1
     transition: all .2s;
     cursor: pointer;
 }
-.features-card p 
-{
-    // letter-spacing: 1px;
-}
+
 .features-card:hover
 {
     background-color: white;
@@ -342,10 +336,7 @@ background-color: rgb(237 240 241);
   overflow: hidden;
  
 }
-.download .download-content
-{
 
-}
 
 .download .download-content h5
 {
@@ -378,12 +369,7 @@ background-color: rgb(237 240 241);
     height: 500px;
     transform: scale(1.1);
 }
-.download .download-img img
-{
-//     width: 300px;
-//    height: 300px !important;
 
-}
 @media (max-width: 767px) {
     .container
     {
