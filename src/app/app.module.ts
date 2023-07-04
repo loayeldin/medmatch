@@ -25,6 +25,7 @@ import {CookieService} from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OrdersComponent } from './orders/orders.component';
 
 
 
@@ -47,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     ChatComponent,
     CartComponent,
+    OrdersComponent,
     
   ],
   imports: [

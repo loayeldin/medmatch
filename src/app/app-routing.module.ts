@@ -11,6 +11,7 @@ import { MobilefeaturesComponent } from './features/mobilefeatures/mobilefeature
 import { DesktopfeaturesComponent } from './features/desktopfeatures/desktopfeatures.component';
 import { ChatComponent } from './chat/chat.component';
 import { CartComponent } from './cart/cart.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home', pathMatch:'full'},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'cart',component:CartComponent},
   {path:'chat',component:ChatComponent},
+  {path:'orders',component:OrdersComponent},
   {path:'features',component:FeaturesComponent,children:[
     {path:'',redirectTo:'mobilefeatures', pathMatch:'full'},
     {path:'mobilefeatures',component:MobilefeaturesComponent},
