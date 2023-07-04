@@ -25,6 +25,7 @@ export class SearchresultComponent {
   faCheck=faCheck
   drugQuantity!:number
   drugId:any
+  alterDrugId:any 
   ShowCartData!:any
   ngOnInit()
   {
@@ -113,16 +114,26 @@ export class SearchresultComponent {
     console.log(id)
 
   }
+  getAlterDrugId(index:number)
+  {
+    console.log(this.alterDrugsData)
+    let id = this.alterDrugsData[index]._id
+    this.alterDrugId=id
+    console.log(id,this.alterDrugId)
+
+  }
   onSubmit(form:NgForm)
   {
     console.log(form.value)
     if(this.drugId)
     {
-      console.log('suces')
-      this.addDrugToCart(form)
-    }else
+      console.log('suces from drug')
+      this.addDrugToCart(form,this.drugId)
+    }else if (this.alterDrugId)
     {
-      console.log('err')
+      this.addDrugToCart(form,this.alterDrugId)
+
+      console.log('succ from alter ')
     }
   }
   // getDrugQuantity()
@@ -140,7 +151,7 @@ export class SearchresultComponent {
 
   // }
 
-  addDrugToCart(quantityForm:NgForm)
+  addDrugToCart(quantityForm:NgForm,drugId:any)
   {
     let token = this.authService.user.value.token
  
@@ -149,7 +160,7 @@ console.log(quantityForm.value,this.drugId,token)
       'Authorization': `Bearer ${token}`
     });
 
-   return this.http.post(`https://medmatch.onrender.com/cart/addToCart/${this.drugId}`,
+   return this.http.post(`https://medmatch.onrender.com/cart/addToCart/${drugId}`,
    
    quantityForm.value,
 
