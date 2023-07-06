@@ -128,6 +128,10 @@
                         <td>{{drug.name}}</td>
                         <td>{{drug.activeIngredient}}</td>
                         <td>{{drug.price}} L.E</td>
+                        <td class="d-flex justify-content-between align-items-center flex-wrap">
+                            <button class="btn btn-danger text-capitalize" (click)="getAlterDrugId(i)" data-toggle="modal" data-target="#staticBackdropquantity">add to cart</button>
+    
+                        </td>
                         
                     </tr>
     
