@@ -191,7 +191,7 @@ export class CartComponent {
     })
   }
 
-
+ //// hide 
   hideSuccessMsg()
   {
     $('.overlay').css('display','none')
@@ -201,7 +201,8 @@ export class CartComponent {
     $('.thank-you-parag').fadeOut()
     $('.thank-you-btn').fadeOut()
     
-  }
+  } 
+  ///-----/////////////////
   showSuccessMsg()
   {
     $('#staticBackdropquantity').modal('hide') 
