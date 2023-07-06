@@ -45,8 +45,6 @@ export class OrdersComponent implements OnInit {
   
     this.http.delete(delOrderApi, { headers }).subscribe((response: any) => {
       console.log('Order canceled successfully');
-  
-      // Remove the canceled order from the orders array
       this.orders = this.orders.filter(order => order._id !== orderId);
       this.checkOrders()
     });
