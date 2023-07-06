@@ -35,22 +35,23 @@ export class OrdersComponent implements OnInit {
     })
   }
 
-  cancelOrder(orderId: string){
+  cancelOrder(orderId: string) {
     const delOrderApi = `https://medmatch.onrender.com/order/cancelOrder/${orderId}`;
     const token = this.authService.user.value.token;
-
+  
     const headers = new HttpHeaders({
-      'Authorization' : `Bearer ${token}`
-    })
-
-    this.http.delete(delOrderApi , {headers}).subscribe((response : any)=>{
-      console.log('Order canceled Successfully');
-      this.checkOrders();
-    })
-      
-      
-    
+      'Authorization': `Bearer ${token}`
+    });
+  
+    this.http.delete(delOrderApi, { headers }).subscribe((response: any) => {
+      console.log('Order canceled successfully');
+  
+      // Remove the canceled order from the orders array
+      this.orders = this.orders.filter(order => order._id !== orderId);
+      this.checkOrders()
+    });
   }
+  
 
   
 }
