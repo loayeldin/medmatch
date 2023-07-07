@@ -1,0 +1,108 @@
+.all
+{
+    min-height: 100vh !important;
+    position: relative;
+    background-color: rgb(237 237 237);
+    overflow-y: auto;
+}
+.shopping-cart{
+    
+    border-top: red solid 2px;
+}
+.font{
+    span{
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+.mycontainer
+{
+    width: 90%;
+    margin: auto;
+    position: absolute;
+    overflow: hidden;
+    top: 20%;
+    left: 4%;
+
+    background-color: white;
+    border-radius: 20px;
+ 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+.mycontainer2
+{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+.first-card
+{
+    // background-color: rgb(244, 247, 249);
+    background-color: white;
+    padding: 15px;
+    height: auto;
+    border-radius: 20px;
+    // box-shadow: 0 18px 1px rgba(0, 0, 0, 0.1); 
+    // box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    //-5px -5px 6px 3px rgba(0, 0, 0, 0.1)
+    // overflow: hidden;
+}
+.default-first-card
+{
+  padding: 15px;
+}
+
+
+.mycontainer3 {
+    width: 50%; /* Adjust the width as per your requirement */
+    float: right;
+    margin-top: 2rem;
+  }
+  
+  .default-first-card {
+    /* Add your styles for the container */
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  .float-right {
+    float: right;
+  }
+  
+  .col-md-6 {
+    /* Add your styles for col-md-6 class */
+  }
+  
+  .mt-2 {
+    margin-top: 2rem;
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+    .mycontainer {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .mycontainer3 {
+      margin-top: 1rem;
+    }
+  
+    .col-md-6 {
+      width: 100%;
+    }
+}
