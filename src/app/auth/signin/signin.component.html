@@ -147,6 +147,7 @@
     <form #login="ngForm" (ngSubmit)="onSubmit(login)" class=" formm"> 
         <div *ngIf="isLoading" style="text-align: center;">
             <app-loading-spinner></app-loading-spinner>
+            <div style="color: green;">please wait server is loading...</div>
         </div>
 
         <input 

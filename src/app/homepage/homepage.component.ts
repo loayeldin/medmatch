@@ -118,4 +118,7 @@ export class HomepageComponent {
     console.log("test search :" + this.searchValue)
     this.HomeService.searchDrugRequest(this.searchValue)
   }
+
+
+  
 }
